@@ -1,8 +1,9 @@
+const db = require("./models/");
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000
-const db = require("./models/");
+
 const cors = require("cors");
 app.use(cors());
 
@@ -14,7 +15,7 @@ function success(res, payload) {
 
 app.get("/notes", async (req, res, next) => {
   try {
-    const notes = await db.Notes.find({})
+    const notes = await db.Notes.find()
     return success(res, notes)
   } catch (err) {
     next({ status: 400, messages: "Failed to get Notes"})
@@ -23,7 +24,8 @@ app.get("/notes", async (req, res, next) => {
 
 app.post("/notes", async (req, res, next) => {
   try {
-    const note = await db.Notes.create(req.body)
+    const { title, content, date, category } = req.body;
+    const note = await db.Notes.insertOne({ title: title, content: content, date: date, category: category})
     return success(res, note)
   } catch (err) {
     next({ status: 400, message: "Failed to create note"})
@@ -32,7 +34,7 @@ app.post("/notes", async (req, res, next) => {
 
 app.put("/notes/:id", async (req, res, next) => {
   try {
-    const note = await db.Notes.findByIdAndUpdate(req.params.id, req.body, {
+    const note = await db.Note.findByIdAndUpdate(req.params.id, req.body, {
         new: true
       }
     )
@@ -44,7 +46,7 @@ app.put("/notes/:id", async (req, res, next) => {
 
 app.delete("/notes/:id", async (req, res, next) => {
   try {
-    await db.Notes.findByIdAndRemove(req.params.id)
+    await db.Note.findByIdAndRemove(req.params.id)
     return success(res, "Note Deleted")
   } catch (err) {
     next({ status: 400, message: "Failed to delete note"})
