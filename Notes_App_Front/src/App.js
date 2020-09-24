@@ -1,24 +1,111 @@
-import React from 'react';
-import './App.scss';
 
-const App = () => {
+import React, { useState, useEffect } from "react"
+import "./App.scss"
+import APIHelper from "./APIHelper.js"
+
+function App() {
+  const [notes, setNotes] = useState([])
+  const [noteTitle, setNoteTitle] = useState("")
+  const [noteContent, setNoteContent] = useState("")
+  const [noteDate, setNoteDate] = useState("")
+  const [noteCat, setNoteCat] = useState("")
+  const [note, setNote] = useState({})
+
+
+  useEffect(() => {
+    const fetchNoteAndSetNotes = async () => {
+      const notes = await APIHelper.getAllNotes()
+      setNotes(notes)
+    }
+    fetchNoteAndSetNotes()
+  }, [])
+
+  useEffect(() => {
+    setNote({
+      title: noteTitle,
+      content: noteContent,
+      date: noteDate,
+      category: noteCat
+    });
+
+  }, [noteTitle, noteContent, noteDate, noteCat])
+
+  const createNote = async e => {
+    e.preventDefault();
+
+    if (!note) {
+      alert("please enter something")
+      return
+    }
+  
+    const newNote = await APIHelper.createNote(note)
+    setNotes([...notes, newNote])
+  }
+
+  const deleteNote = async (e, id) => {
+    try {
+      e.stopPropagation()
+      await APIHelper.deleteNote(id)
+      setNotes(notes.filter(({ _id: i }) => id !== i))
+    } catch (err) {}
+  }
+
+  const updateNote = async (e, id) => {
+    e.stopPropagation()
+    const payload = {
+      completed: !notes.find(note => note._id === id).completed,
+    }
+    const updatedNote = await APIHelper.updateNote(id, payload)
+    setNotes(notes.map(note => (note._id === id ? updatedNote : note)))
+  }
+
   return (
     <div className="App">
-      <header>
-        <h1>React App Template</h1>
-        </header>
-      <main id="mainWrap">
-        <section className="gridWrap">
-          <h2>Welcome to The Grid.</h2>
-          <p>This reactJS template was the result of a challenge from a close friend and mentor, and some curiosity. The purpose of this is to have an up and running ReactJS app, that is as minimal as possible.</p>
-          <p>Proceed with caution. This may be a smaller app to start, but wont be as... 'comfy' as create-react-app.</p>
-          <div className="theChallenge">
-            <p>With that, I have one question...</p>
-            <h4>What will YOU build today?</h4>
-            </div>
-          </section>
-        </main>
-      </div>
+      <form onSubmit={createNote}>
+        <input
+          id="noteTitleInput"
+          type="text"
+          value={noteTitle}
+          onChange={({ target }) => setNoteTitle(target.value)}
+        />
+        <input
+          id="noteDateInput"
+          type="text"
+          value={noteDate}
+          onChange={({ target }) => setNoteDate(target.value)}
+        />
+        <input
+          id="noteCatInput"
+          type="text"
+          value={noteCat}
+          onChange={({ target }) => setNoteCat(target.value)}
+        />
+
+        <textarea
+          id="noteContentInput"
+          type="textArea"
+          value={noteContent}
+          onChange={({ target }) => setNoteContent(target.value)}
+        />
+        <button type="submit">
+          Add
+        </button>
+      </form>
+
+      <ul>
+        {notes.map(({ _id, note, completed }, i) => (
+          <li
+            key={i}
+            onClick={e => updateNote(e, _id)}
+            className={completed ? "completed" : ""}
+          >
+            {notes[i].title}
+
+            <span onClick={e => deleteNote(e, _id)}>X</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
