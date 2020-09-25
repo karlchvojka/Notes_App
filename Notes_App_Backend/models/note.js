@@ -5,12 +5,12 @@ const noteSchema = new mongoose.Schema({
 
   title: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   content: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   date: {
