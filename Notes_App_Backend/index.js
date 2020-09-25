@@ -25,19 +25,17 @@ app.get("/notes", async (req, res, next) => {
 
 app.post("/notes", async (req, res, next) => {
   try {
-    console.log('req', req.body)
     const { title, content, date, category } = req.body;
     const note = await db.Notes.create(req.body)
     return success(res, note)
   } catch (err) {
-    console.log('error: ', err)
     next({ status: 400, message: "Failed to create note"})
   }
 })
 
 app.put("/notes/:id", async (req, res, next) => {
   try {
-    const note = await db.Note.findByIdAndUpdate(req.params.id, req.body, {
+    const note = await db.Notes.findByIdAndUpdate(req.params.id, req.body, {
         new: true
       }
     )
@@ -49,7 +47,7 @@ app.put("/notes/:id", async (req, res, next) => {
 
 app.delete("/notes/:id", async (req, res, next) => {
   try {
-    await db.Note.findByIdAndRemove(req.params.id)
+    await db.Notes.findByIdAndDelete(req.params.id)
     return success(res, "Note Deleted")
   } catch (err) {
     next({ status: 400, message: "Failed to delete note"})
