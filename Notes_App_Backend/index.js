@@ -16,6 +16,7 @@ function success(res, payload) {
 app.get("/notes", async (req, res, next) => {
   try {
     const notes = await db.Notes.find()
+    console.log(notes)
     return success(res, notes)
   } catch (err) {
     next({ status: 400, messages: "Failed to get Notes"})
@@ -25,7 +26,7 @@ app.get("/notes", async (req, res, next) => {
 app.post("/notes", async (req, res, next) => {
   try {
     const { title, content, date, category } = req.body;
-    const note = await db.Notes.insertOne({ title: title, content: content, date: date, category: category})
+    const note = await db.Notes.create(req.body)
     return success(res, note)
   } catch (err) {
     next({ status: 400, message: "Failed to create note"})
@@ -34,7 +35,7 @@ app.post("/notes", async (req, res, next) => {
 
 app.put("/notes/:id", async (req, res, next) => {
   try {
-    const note = await db.Note.findByIdAndUpdate(req.params.id, req.body, {
+    const note = await db.Notes.findByIdAndUpdate(req.params.id, req.body, {
         new: true
       }
     )
@@ -46,7 +47,7 @@ app.put("/notes/:id", async (req, res, next) => {
 
 app.delete("/notes/:id", async (req, res, next) => {
   try {
-    await db.Note.findByIdAndRemove(req.params.id)
+    await db.Notes.findByIdAndDelete(req.params.id)
     return success(res, "Note Deleted")
   } catch (err) {
     next({ status: 400, message: "Failed to delete note"})

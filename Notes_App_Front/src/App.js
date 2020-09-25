@@ -10,15 +10,16 @@ function App() {
   const [noteDate, setNoteDate] = useState("")
   const [noteCat, setNoteCat] = useState("")
   const [note, setNote] = useState({})
+  const [theNote, setTheNote] = useState({})
 
+  const fetchNoteAndSetNotes = async () => {
+    const notes = await APIHelper.getAllNotes()
+    setNotes(notes)
+  }
 
   useEffect(() => {
-    const fetchNoteAndSetNotes = async () => {
-      const notes = await APIHelper.getAllNotes()
-      setNotes(notes)
-    }
     fetchNoteAndSetNotes()
-  }, [])
+  }, [theNote])
 
   useEffect(() => {
     setNote({
@@ -37,9 +38,10 @@ function App() {
       alert("please enter something")
       return
     }
-  
+
     const newNote = await APIHelper.createNote(note)
     setNotes([...notes, newNote])
+    setTheNote(newNote)
   }
 
   const deleteNote = async (e, id) => {
@@ -100,8 +102,7 @@ function App() {
             className={completed ? "completed" : ""}
           >
             {notes[i].title}
-
-            <span onClick={e => deleteNote(e, _id)}>X</span>
+            <button onClick={e => deleteNote(e, _id)}>X</button>
           </li>
         ))}
       </ul>
