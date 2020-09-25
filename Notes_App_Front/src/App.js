@@ -10,7 +10,6 @@ import NoteItem from "./components/modules/NoteItem/"
 function App() {
   const [notes, setNotes] = useState([])
 
-
   const deleteNote = async (e, id) => {
     try {
       e.stopPropagation()
@@ -18,14 +17,6 @@ function App() {
       setNotes(notes.filter(({ _id: i }) => id !== i))
     } catch (err) {}
   }
-
-  const notesLoop = notes.map((note, i) => (
-    <NoteItem
-      key={note._id}
-      deleteNote={deleteNote}
-      note={note}
-    />
-  ))
 
   return (
     <div id="App">
@@ -37,7 +28,13 @@ function App() {
       </div>
       <div className="mainWrap">
         <ul>
-          {notesLoop}
+          {notes.map((note, i) => (
+            <NoteItem
+              key={note._id}
+              deleteNote={deleteNote}
+              note={note}
+            />
+          ))}
         </ul>
       </div>
     </div>

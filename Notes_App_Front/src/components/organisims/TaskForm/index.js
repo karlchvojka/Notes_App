@@ -11,7 +11,6 @@ const TaskForm = (props) => {
   const [note, setNote] = useState({})
   const [theNote, setTheNote] = useState({})
 
-
   const fetchNoteAndSetNotes = async () => {
     const notes = await APIHelper.getAllNotes()
     props.setNotes(notes)
