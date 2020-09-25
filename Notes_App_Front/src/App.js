@@ -3,46 +3,13 @@ import React, { useState, useEffect } from "react"
 import "./App.scss"
 import APIHelper from "./APIHelper.js"
 
+// Component Includes
+import TaskForm from "./components/organisims/TaskForm/"
+import NoteItem from "./components/modules/NoteItem/"
+
 function App() {
   const [notes, setNotes] = useState([])
-  const [noteTitle, setNoteTitle] = useState("")
-  const [noteContent, setNoteContent] = useState("")
-  const [noteDate, setNoteDate] = useState("")
-  const [noteCat, setNoteCat] = useState("")
-  const [note, setNote] = useState({})
-  const [theNote, setTheNote] = useState({})
 
-  const fetchNoteAndSetNotes = async () => {
-    const notes = await APIHelper.getAllNotes()
-    setNotes(notes)
-  }
-
-  useEffect(() => {
-    fetchNoteAndSetNotes()
-  }, [theNote])
-
-  useEffect(() => {
-    setNote({
-      title: noteTitle,
-      content: noteContent,
-      date: noteDate,
-      category: noteCat
-    });
-
-  }, [noteTitle, noteContent, noteDate, noteCat])
-
-  const createNote = async e => {
-    e.preventDefault();
-
-    if (!note) {
-      alert("please enter something")
-      return
-    }
-
-    const newNote = await APIHelper.createNote(note)
-    setNotes([...notes, newNote])
-    setTheNote(newNote)
-  }
 
   const deleteNote = async (e, id) => {
     try {
@@ -61,51 +28,23 @@ function App() {
     setNotes(notes.map(note => (note._id === id ? updatedNote : note)))
   }
 
+  const notesLoop = notes.map((note, i) => (
+    <NoteItem
+      key={note._id}
+      updateNote={updateNote}
+      deleteNote={deleteNote}
+      note={note}
+    />
+  ))
+
   return (
     <div className="App">
-      <form onSubmit={createNote}>
-        <input
-          id="noteTitleInput"
-          type="text"
-          value={noteTitle}
-          onChange={({ target }) => setNoteTitle(target.value)}
-        />
-        <input
-          id="noteDateInput"
-          type="text"
-          value={noteDate}
-          onChange={({ target }) => setNoteDate(target.value)}
-        />
-        <input
-          id="noteCatInput"
-          type="text"
-          value={noteCat}
-          onChange={({ target }) => setNoteCat(target.value)}
-        />
-
-        <textarea
-          id="noteContentInput"
-          type="textArea"
-          value={noteContent}
-          onChange={({ target }) => setNoteContent(target.value)}
-        />
-        <button type="submit">
-          Add
-        </button>
-      </form>
-
-      <ul>
-        {notes.map(({ _id, note, completed }, i) => (
-          <li
-            key={i}
-            onClick={e => updateNote(e, _id)}
-            className={completed ? "completed" : ""}
-          >
-            {notes[i].title}
-            <button onClick={e => deleteNote(e, _id)}>X</button>
-          </li>
-        ))}
-      </ul>
+      <TaskForm setNotes={setNotes} currNotes={notes} />
+      <div className="notesList">
+        <ul>
+          {notesLoop}
+        </ul>
+      </div>
     </div>
   )
 }
