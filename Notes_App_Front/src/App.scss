@@ -5,9 +5,9 @@
   I would suggest leaving the imports tho ;)
 */
 
-@import '../Styles/_reset.scss';
-@import '../Styles/variables.scss';
-@import '../Styles/fonts.scss';
+@import '../styles/_reset.scss';
+@import '../styles/variables.scss';
+@import '../styles/fonts.scss';
 
 body {
   background-color: $darkGrey;
@@ -22,31 +22,12 @@ header {
   padding:20px;
   text-align:center;
 }
-#mainWrap {
+.formWrap {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.mainWrap {
   height:100vh;
   max-width:80%;
   margin: 0 auto;
-
-  .gridWrap {
-    background-color: $headerGrey;
-    border-radius: 10px;
-    box-shadow: 2px 1px 8px 5px rgba(48,191,242,0.75);
-    margin-top:50px;
-    padding:$spacing;
-    -webkit-box-shadow: 2px 1px 8px 5px rgba(48,191,242,0.75);
-    -moz-box-shadow: 2px 1px 8px 5px rgba(48,191,242,0.75);
-
-    h2 {
-      text-align:center;
-      margin-bottom: $spacing;
-    }
-    p {
-      text-align: center;
-    }
-
-    .theChallenge {
-      margin-top:20px;
-      text-align: center;
-    }
-  }
 }
