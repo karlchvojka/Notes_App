@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./index.scss"
 
-import APIHelper from '../../../APIHelper.js'
+import APIHelper from '../../../helpers/APIHelper.js'
 
 const TaskForm = (props) => {
   const [noteTitle, setNoteTitle] = useState("")
@@ -10,7 +10,6 @@ const TaskForm = (props) => {
   const [noteCat, setNoteCat] = useState("")
   const [note, setNote] = useState({})
   const [theNote, setTheNote] = useState({})
-
 
   const fetchNoteAndSetNotes = async () => {
     const notes = await APIHelper.getAllNotes()
@@ -45,30 +44,42 @@ const TaskForm = (props) => {
   }, [theNote])
 
   return (
-    <form onSubmit={createNote}>
-      <input
-        id="noteTitleInput"
-        type="text"
-        value={noteTitle}
-        onChange={({ target }) => setNoteTitle(target.value)}
-      />
-      <input
-        id="noteDateInput"
-        type="text"
-        value={noteDate}
-        onChange={({ target }) => setNoteDate(target.value)}
-      />
-      <input
-        id="noteCatInput"
-        type="text"
-        value={noteCat}
-        onChange={({ target }) => setNoteCat(target.value)}
-      />
-
+    <form id="taskForm" onSubmit={createNote}>
+      <label>
+        <span>Title:</span>
+        <input
+          id="noteTitleInput"
+          type="text"
+          value={noteTitle}
+          name="titleInput"
+          onChange={({ target }) => setNoteTitle(target.value)}
+        />
+      </label>
+      <label>
+        <span>Date:</span>
+        <input
+          id="noteDateInput"
+          type="text"
+          value={noteDate}
+          name="dateInput"
+          onChange={({ target }) => setNoteDate(target.value)}
+        />
+      </label>
+      <label>
+        <span>Category:</span>
+        <input
+          id="noteCatInput"
+          type="text"
+          value={noteCat}
+          name="catInput"
+          onChange={({ target }) => setNoteCat(target.value)}
+        />
+      </label>
       <textarea
         id="noteContentInput"
         type="textArea"
         value={noteContent}
+        name="contInput"
         onChange={({ target }) => setNoteContent(target.value)}
       />
       <button type="submit">
