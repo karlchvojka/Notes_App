@@ -1,5 +1,8 @@
 
 import React, { useState, useEffect } from "react"
+import "../styles/_reset.scss"
+import "../styles/fonts.scss"
+import "../styles/variables.scss"
 import "./App.scss"
 import APIHelper from "./helpers/APIHelper.js"
 
