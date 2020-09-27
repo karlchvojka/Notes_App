@@ -18,7 +18,6 @@ const TaskForm = (props) => {
 
   const createNote = async e => {
     e.preventDefault();
-
     if (!note) {
       alert("please enter something")
       return
@@ -82,7 +81,7 @@ const TaskForm = (props) => {
         name="contInput"
         onChange={({ target }) => setNoteContent(target.value)}
       />
-      <button type="submit">
+      <button id="submitButton" type="submit">
         Add
       </button>
     </form>

@@ -14,7 +14,6 @@ Once you have used the template to create the repo, follow these instructions:
 2. Run: npm Install
 3. To start: npm start
 
-
 ## To run tests in Dev:
 ### For normal testing:
 npm test

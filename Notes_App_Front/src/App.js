@@ -11,7 +11,7 @@ import TaskForm from "./components/organisims/TaskForm/"
 import NoteItem from "./components/modules/NoteItem/"
 
 function App() {
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState([]);
 
   const deleteNote = async (e, id) => {
     try {

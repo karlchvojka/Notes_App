@@ -6,12 +6,16 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 3001",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest --env=jsdom"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/react-hooks": "^3.4.1",
     "axios": "^0.20.0",
     "babel-jest": "^26.3.0",
     "css-loader": "^4.3.0",
@@ -34,15 +38,5 @@
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    },
-    "collectCoverageFrom": [
-      "**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/"
-    ],
-    "collectCoverage": true
   }
 }

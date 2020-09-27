@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from '../App';
+import React from "react";
 
-describe('App', () => {
-  test('The app component renders', () => {
-    const component = renderer.create(<App />);
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  })
-})
+import { render, cleanup } from "@testing-library/react";
+
+import App from "../App";
+
+afterEach(cleanup);
+
+it("renders without crashing", () => {
+  render(<App />);
+});

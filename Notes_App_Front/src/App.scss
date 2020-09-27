@@ -5,6 +5,10 @@
   I would suggest leaving the imports tho ;)
 */
 
+@import '../styles/_reset.scss';
+@import '../styles/variables.scss';
+@import '../styles/fonts.scss';
+
 body {
   background-color: $darkGrey;
   background-size: 75px 75px;
