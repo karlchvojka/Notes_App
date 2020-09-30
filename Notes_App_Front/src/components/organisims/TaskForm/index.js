@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import "./index.scss"
 
 import APIHelper from '../../../helpers/APIHelper.js'
+import CrudHelpers from "../../../helpers/CrudHelpers.js"
+
 
 const TaskForm = (props) => {
   const [noteTitle, setNoteTitle] = useState("")
@@ -16,16 +18,10 @@ const TaskForm = (props) => {
     props.setNotes(notes)
   }
 
-  const createNote = async e => {
-    e.preventDefault();
-    if (!note) {
-      alert("please enter something")
-      return
-    }
-
-    const newNote = await APIHelper.createNote(note)
-    props.setNotes([...props.currNotes, newNote])
-    setTheNote(newNote)
+  const handleSubmit = (e) => {
+    const createNote = CrudHelpers.createNote(e, note)
+    props.setNotes([...props.currNotes, createNote])
+    setTheNote(createNote)
   }
 
   useEffect(() => {
@@ -43,7 +39,7 @@ const TaskForm = (props) => {
   }, [theNote])
 
   return (
-    <form id="taskForm" onSubmit={createNote}>
+    <form id="taskForm" onSubmit={handleSubmit}>
       <label>
         <span>Title:</span>
         <input

@@ -24,5 +24,4 @@ async function getAllNotes() {
   const { data: notes } = await axios.get(API_URL)
   return notes
 }
-
-export default { createNote, deleteNote, updateNote, getAllNotes }
+export default { createNote, deleteNote, updateNote, getAllNotes, }

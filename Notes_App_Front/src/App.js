@@ -13,14 +13,6 @@ import NoteItem from "./components/modules/NoteItem/"
 function App() {
   const [notes, setNotes] = useState([]);
 
-  const deleteNote = async (e, id) => {
-    try {
-      e.stopPropagation()
-      await APIHelper.deleteNote(id)
-      setNotes(notes.filter(({ _id: i }) => id !== i))
-    } catch (err) {}
-  }
-
   return (
     <div id="App">
       <header>
@@ -34,8 +26,9 @@ function App() {
           {notes.map((note, i) => (
             <NoteItem
               key={note._id}
-              deleteNote={deleteNote}
               note={note}
+              notes={notes}
+              setNotes={setNotes}
             />
           ))}
         </ul>
