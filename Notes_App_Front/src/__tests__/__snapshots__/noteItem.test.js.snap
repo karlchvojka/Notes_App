@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the app renders renders without crashing 1`] = `
+<li>
+  Test note
+  <button
+    className="deleteButton"
+    onClick={[Function]}
+  >
+    X
+  </button>
+</li>
+`;

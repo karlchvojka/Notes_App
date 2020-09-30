@@ -3,22 +3,16 @@ import axios from "axios";
 const API_URL = "http://localhost:3000/notes"
 
 async function createNote(note) {
-
-    const resp = await axios.post(API_URL, note);
-    return resp
-
-  // await axios.post(API_URL, note
-  // ).then(function(res) {
-  //   console.log('res', res)
-  //   return newNote
-  // }).catch(function(error) {
-  //   console.log(error)
-  // })
+  const resp = await axios.post(API_URL, note);
+  return resp
 }
 
 async function deleteNote(id) {
   const message = await axios.delete(`${API_URL}/${id}`)
-  return message
+  .then(message => {
+    console.log(message)
+    return message
+  })
 }
 
 async function updateNote(id, payload) {
@@ -28,8 +22,6 @@ async function updateNote(id, payload) {
 
 async function getAllNotes() {
   const { data: notes } = await axios.get(API_URL)
-  console.log('res', notes)
   return notes
 }
-
-export default { createNote, deleteNote, updateNote, getAllNotes }
+export default { createNote, deleteNote, updateNote, getAllNotes, }

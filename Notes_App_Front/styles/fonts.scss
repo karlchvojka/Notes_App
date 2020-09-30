@@ -2,6 +2,8 @@
   This is a file to use for fonts. And fonts only.
   The fonts set up are default, feel free to change them.
 */
+@import './styles/_reset.scss';
+@import './styles/variables.scss';
 
 h1 {
   color: $lightBlue;
