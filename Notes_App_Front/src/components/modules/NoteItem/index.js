@@ -10,13 +10,13 @@ const NoteItem = (props) => {
     CrudHelpers.deleteNote(e, note._id)
     setNotes(notes.filter(({ _id: i }) => note._id !== i))
   }
-  
+
   return (
     <li
       key={props.note._id}
     >
       {props.note.title}
-      <button onClick={e => handleClick(e)}>X</button>
+      <button className="deleteButton" onClick={e => handleClick(e)}>X</button>
     </li>
   )
 }

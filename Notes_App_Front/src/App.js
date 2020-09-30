@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div id="App">
-      <header>
+      <header id="mainHeader">
         <h1>Burn_Net: Notes</h1>
       </header>
       <div className="formWrap">

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the app renders renders without crashing 1`] = `
+<div
+  id="App"
+>
+  <header
+    id="mainHeader"
+  >
+    <h1>
+      Burn_Net: Notes
+    </h1>
+  </header>
+  <div
+    className="formWrap"
+  >
+    <form
+      id="taskForm"
+      onSubmit={[Function]}
+    >
+      <label>
+        <span>
+          Title:
+        </span>
+        <input
+          id="noteTitleInput"
+          name="titleInput"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <label>
+        <span>
+          Date:
+        </span>
+        <input
+          id="noteDateInput"
+          name="dateInput"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <label>
+        <span>
+          Category:
+        </span>
+        <input
+          id="noteCatInput"
+          name="catInput"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <textarea
+        id="noteContentInput"
+        name="contInput"
+        onChange={[Function]}
+        type="textArea"
+        value=""
+      />
+      <button
+        id="submitButton"
+        type="submit"
+      >
+        Add
+      </button>
+    </form>
+  </div>
+  <div
+    className="mainWrap"
+  >
+    <ul />
+  </div>
+</div>
+`;
