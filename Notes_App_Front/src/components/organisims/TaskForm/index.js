@@ -47,7 +47,7 @@ const TaskForm = (props) => {
   }, [theNote]);
 
   const makeBold = () => {
-    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
+    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'));
   };
 
   return (
