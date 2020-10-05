@@ -1,0 +1,8 @@
+@import '../../../../styles/_reset.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/fonts.scss';
+header {
+  background-color: $headerGrey;
+  padding:20px;
+  text-align:center;
+}

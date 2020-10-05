@@ -5,6 +5,7 @@ import '../styles/variables.scss';
 import './App.scss';
 
 // Component Includes
+import Header from './components/molecules/Header';
 import TaskForm from './components/organisims/TaskForm';
 import NoteItem from './components/molecules/NoteItem';
 
@@ -13,9 +14,7 @@ function App() {
 
   return (
     <div id="App">
-      <header id="mainHeader">
-        <h1>Burn_Net: Notes</h1>
-      </header>
+      <Header />
       <div className="formWrap">
         <TaskForm currNotes={notes} setNotes={setNotes} />
       </div>
