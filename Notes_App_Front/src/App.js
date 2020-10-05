@@ -1,14 +1,12 @@
-
-import React, { useState, useEffect } from "react"
-import "../styles/_reset.scss"
-import "../styles/fonts.scss"
-import "../styles/variables.scss"
-import "./App.scss"
-import APIHelper from "./helpers/APIHelper.js"
+import React, { useState, useEffect } from 'react';
+import '../styles/_reset.scss';
+import '../styles/fonts.scss';
+import '../styles/variables.scss';
+import './App.scss';
 
 // Component Includes
-import TaskForm from "./components/organisims/TaskForm/"
-import NoteItem from "./components/modules/NoteItem/"
+import TaskForm from './components/organisims/TaskForm';
+import NoteItem from './components/modules/NoteItem';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,7 +17,7 @@ function App() {
         <h1>Burn_Net: Notes</h1>
       </header>
       <div className="formWrap">
-        <TaskForm setNotes={setNotes} currNotes={notes} />
+        <TaskForm currNotes={notes} setNotes={setNotes} />
       </div>
       <div className="mainWrap">
         <ul>
@@ -29,12 +27,12 @@ function App() {
               note={note}
               notes={notes}
               setNotes={setNotes}
-            />
+              />
           ))}
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

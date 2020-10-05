@@ -1,87 +1,106 @@
-import React, { useState, useEffect } from "react"
-import "./index.scss"
+import React, { useState, useEffect } from 'react';
+import './index.scss';
+import { Editor, EditorState, RichUtils } from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
-import APIHelper from '../../../helpers/APIHelper.js'
-import CrudHelpers from "../../../helpers/CrudHelpers.js"
-
+import APIHelper from '../../../helpers/APIHelper.js';
+import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
 const TaskForm = (props) => {
-  const [noteTitle, setNoteTitle] = useState("")
-  const [noteContent, setNoteContent] = useState("")
-  const [noteDate, setNoteDate] = useState("")
-  const [noteCat, setNoteCat] = useState("")
-  const [note, setNote] = useState({})
-  const [theNote, setTheNote] = useState({})
+  const [noteTitle, setNoteTitle] = useState('');
+  const [noteContent, setNoteContent] = useState('');
+  const [noteDate, setNoteDate] = useState('');
+  const [noteCat, setNoteCat] = useState('');
+  const [note, setNote] = useState({});
+  const [theNote, setTheNote] = useState({});
+  const [editorState, setEditorState] = useState(
+    () => EditorState.createEmpty(),
+  );
 
   const fetchNoteAndSetNotes = async () => {
-    const notes = await APIHelper.getAllNotes()
-    props.setNotes(notes)
-  }
+    const notes = await APIHelper.getAllNotes();
+    props.setNotes(notes);
+  };
 
   const handleSubmit = (e) => {
-    const createNote = CrudHelpers.createNote(e, note)
-    props.setNotes([...props.currNotes, createNote])
-    setTheNote(createNote)
-  }
+    const createNote = CrudHelpers.createNote(e, note);
+    props.setNotes([...props.currNotes, createNote]);
+    setTheNote(createNote);
+  };
 
   useEffect(() => {
     setNote({
-      title: noteTitle,
+      category: noteCat,
       content: noteContent,
       date: noteDate,
-      category: noteCat
+      title: noteTitle,
     });
-
-  }, [noteTitle, noteContent, noteDate, noteCat])
+  }, [
+    noteTitle,
+    noteContent,
+    noteDate,
+    noteCat,
+  ]);
 
   useEffect(() => {
-    fetchNoteAndSetNotes()
-  }, [theNote])
+    fetchNoteAndSetNotes();
+  }, [theNote]);
+
+  const makeBold = () => {
+    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
+  };
 
   return (
     <form id="taskForm" onSubmit={handleSubmit}>
-      <label>
+      <label htmlFor="noteTitleInput">
         <span>Title:</span>
         <input
           id="noteTitleInput"
-          type="text"
-          value={noteTitle}
           name="titleInput"
           onChange={({ target }) => setNoteTitle(target.value)}
-        />
+          type="text"
+          value={noteTitle}
+          />
       </label>
-      <label>
+      <label htmlFor="noteDateInput">
         <span>Date:</span>
         <input
           id="noteDateInput"
-          type="text"
-          value={noteDate}
           name="dateInput"
           onChange={({ target }) => setNoteDate(target.value)}
-        />
+          type="text"
+          value={noteDate}
+          />
       </label>
-      <label>
+      <label htmlFor="noteCatInput">
         <span>Category:</span>
         <input
           id="noteCatInput"
-          type="text"
-          value={noteCat}
           name="catInput"
           onChange={({ target }) => setNoteCat(target.value)}
-        />
+          type="text"
+          value={noteCat}
+          />
       </label>
       <textarea
         id="noteContentInput"
-        type="textArea"
-        value={noteContent}
         name="contInput"
         onChange={({ target }) => setNoteContent(target.value)}
-      />
+        type="textArea"
+        value={noteContent}
+        />
+      <button onClick={() => { makeBold(); }} type="button">Bold</button>
+      <Editor
+        editorState={editorState}
+        onChange={setEditorState}
+        placeholder="Start a document..."
+        spellCheck={true}
+        />
       <button id="submitButton" type="submit">
         Add
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default TaskForm
+export default TaskForm;
