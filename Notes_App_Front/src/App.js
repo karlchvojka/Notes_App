@@ -6,7 +6,7 @@ import './App.scss';
 
 // Component Includes
 import TaskForm from './components/organisims/TaskForm';
-import NoteItem from './components/modules/NoteItem';
+import NoteItem from './components/molecules/NoteItem';
 
 function App() {
   const [notes, setNotes] = useState([]);
