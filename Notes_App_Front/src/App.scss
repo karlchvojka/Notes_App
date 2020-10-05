@@ -17,11 +17,6 @@ body {
     linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
 }
 
-header {
-  background-color: $headerGrey;
-  padding:20px;
-  text-align:center;
-}
 .formWrap {
   max-width: 80%;
   margin: 0 auto;
