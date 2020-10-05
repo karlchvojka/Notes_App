@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 3001",
     "build": "webpack --mode production",
-    "test": "jest --env=jsdom"
+    "test": "jest --config ./jest.config.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "axios": "^0.20.0",
     "babel-jest": "^26.3.0",
     "css-loader": "^4.3.0",
+    "draft-js": "^0.11.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.11.2",
