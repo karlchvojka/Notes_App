@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
+import { Editor, EditorState, RichUtils } from 'draft-js';
+import 'draft-js/dist/Draft.css';
+
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
@@ -10,6 +13,9 @@ const TaskForm = (props) => {
   const [noteCat, setNoteCat] = useState('');
   const [note, setNote] = useState({});
   const [theNote, setTheNote] = useState({});
+  const [editorState, setEditorState] = useState(
+    () => EditorState.createEmpty(),
+  );
 
   const fetchNoteAndSetNotes = async () => {
     const notes = await APIHelper.getAllNotes();
@@ -39,6 +45,10 @@ const TaskForm = (props) => {
   useEffect(() => {
     fetchNoteAndSetNotes();
   }, [theNote]);
+
+  const makeBold = () => {
+    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
+  };
 
   return (
     <form id="taskForm" onSubmit={handleSubmit}>
@@ -78,6 +88,13 @@ const TaskForm = (props) => {
         onChange={({ target }) => setNoteContent(target.value)}
         type="textArea"
         value={noteContent}
+        />
+      <button onClick={() => { makeBold(); }} type="button">Bold</button>
+      <Editor
+        editorState={editorState}
+        onChange={setEditorState}
+        placeholder="Start a document..."
+        spellCheck={true}
         />
       <button id="submitButton" type="submit">
         Add

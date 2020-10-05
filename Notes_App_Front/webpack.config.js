@@ -22,43 +22,47 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-       test: /\.module\.s(a|c)ss$/,
+        test: /\.module\.s(a|c)ss$/,
         loader: [
-         isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              sourceMap: isDevelopment
-            }
+              sourceMap: isDevelopment,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-       ]
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
       },
       {
         test: /\.s(a|c)ss$/,
         exclude: /\.module.(s(a|c)ss)$/,
         loader: [
           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-         'css-loader',
-         {
+          'css-loader',
+          {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
-      }
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 
   resolve: {
-    extensions: ["*", ".js", ".jsx", '.scss'],
+    extensions: ["*", ".js", ".jsx", '.scss', '.css'],
   },
   plugins: [
     htmlPlugin,
