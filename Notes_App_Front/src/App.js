@@ -7,7 +7,7 @@ import './App.scss';
 // Component Includes
 import Header from './components/molecules/Header';
 import TaskForm from './components/organisims/TaskForm';
-import NoteItem from './components/molecules/NoteItem';
+import DocsList from './components/molecules/DocsList';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,16 +19,7 @@ function App() {
         <TaskForm currNotes={notes} setNotes={setNotes} />
       </div>
       <div className="mainWrap">
-        <ul>
-          {notes.map((note, i) => (
-            <NoteItem
-              key={note._id}
-              note={note}
-              notes={notes}
-              setNotes={setNotes}
-              />
-          ))}
-        </ul>
+        <DocsList notes={notes} setNotes={setNotes} />
       </div>
     </div>
   );
