@@ -1,19 +1,21 @@
 module.exports = {
-  preset: '@shelf/jest-mongodb',
+  verbose: true,
   "moduleNameMapper": {
     "\\.(css|less|scss|sass)$": "<rootDir>/CSSStub.js"
   },
+  "collectCoverage": true,
   "collectCoverageFrom": [
-    "**/*.{js,jsx,ts,tsx}",
-    "!<rootDir>/node_modules/"
+    "**/*.{js,jsx}"
   ],
   modulePathIgnorePatterns: [
     "<rootDir>/jest.config.js",
-    "<rootDir>/jest.mongodb-config.js",
     "<rootDir>/webpack.config.js",
     "<rootDir>/coverage/",
-    "<rootDir>/public/"
+    "<rootDir>/public/",
+    "<rootDir>/src/setupTests.js",
+    "<rootDir>/src/serviceWorker.js",
+    "<rootDir>/node_modules",
+    "<rootDir>/src/index.js"
   ],
-  "collectCoverage": true,
-  testEnvironment: 'node'
+  testEnvironment: 'jsdom',
 };
