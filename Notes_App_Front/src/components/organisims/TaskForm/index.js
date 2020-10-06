@@ -29,13 +29,12 @@ const TaskForm = (props) => {
     setNote({
       category: noteCat,
       content: noteContent,
-      date: noteDate,
+      date: new Date(),
       title: noteTitle,
     });
   }, [
     noteTitle,
     noteContent,
-    noteDate,
     noteCat,
   ]);
 
@@ -55,16 +54,6 @@ const TaskForm = (props) => {
           value={noteTitle}
           />
       </label>
-      <label htmlFor="noteDateInput">
-        <span>Date:</span>
-        <input
-          id="noteDateInput"
-          name="dateInput"
-          onChange={({ target }) => setNoteDate(target.value)}
-          type="text"
-          value={noteDate}
-          />
-      </label>
       <label htmlFor="noteCatInput">
         <span>Category:</span>
         <input
@@ -75,14 +64,7 @@ const TaskForm = (props) => {
           value={noteCat}
           />
       </label>
-      <textarea
-        id="noteContentInput"
-        name="contInput"
-        onChange={({ target }) => setNoteContent(target.value)}
-        type="textArea"
-        value={noteContent}
-        />
-      <EditorWrap />
+      <EditorWrap setNoteContent={setNoteContent} />
       <button id="submitButton" type="submit">
         Add
       </button>
