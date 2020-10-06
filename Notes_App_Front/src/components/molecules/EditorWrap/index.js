@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { Editor, EditorState, RichUtils, getDefaultKeyBinding, KeyBindingUtil } from 'draft-js';
 import 'draft-js/dist/Draft.css';
@@ -14,7 +14,7 @@ function keyBindingFunction(event) {
   return getDefaultKeyBinding(event);
 }
 
-function EditorWrap() {
+function EditorWrap({ setNoteContent }) {
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
   );
@@ -24,19 +24,12 @@ function EditorWrap() {
   };
 
   const handleKeyCommand = (command) => {
-    // inline formatting key commands handles bold, italic, code, underline
-    const editorState = RichUtils.handleKeyCommand(editorState, command);
-
-    if (!editorState && command === 'strikethrough') {
-      editorState = RichUtils.toggleInlineStyle(editorState, 'STRIKETHROUGH');
+    const newState = RichUtils.handleKeyCommand(editorState, command);
+    if (newState) {
+      onChange(newState);
+      return true;
     }
-
-    if (editorState) {
-      setEditorState(editorState);
-      return 'handled';
-    }
-
-    return 'not-handled';
+    return false;
   };
 
   const toggleInlineStyle = (event) => {
@@ -54,6 +47,10 @@ function EditorWrap() {
     setEditorState(RichUtils.toggleBlockType(editorState, block),
     );
   };
+
+  useEffect(() => {
+    setNoteContent(editorState);
+  }, [editorState]);
 
   return (
     <div className="my-little-app">
