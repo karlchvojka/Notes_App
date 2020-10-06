@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import NoteItem from '../NoteItem';
+import NoteItem from '../../molecules/NoteItem';
 
 function DocsList({ notes, setNotes }) {
   return (
