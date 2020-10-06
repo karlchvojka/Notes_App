@@ -2,15 +2,22 @@ import React, { useEffect, useState } from 'react';
 import './index.scss';
 
 function SideBar({ notes }) {
-  const categories = [];
-  notes.forEach((note) => {
-    if (!categories.includes(note.category)) {
-      categories.push(note.category);
+  let categories = {};
+
+  notes.map((note) => {
+    let prev = categories[note.category]
+
+    if (!categories.hasOwnProperty(note.category)) {
+      categories[note.category] = 1;
+    } else {
+      categories[note.category] = prev + 1;
     }
   });
+  console.log(categories);
 
-  const cats = categories.map((cat, i) => {
-    return (<p key={cat}><a href="">{cat}</a></p>)
+  const keys = Object.keys(categories);
+  const cats = keys.map((cat, i) => {
+    return (<p key={cat}><a href="">{cat} {categories[cat]}</a></p>)
   });
 
   return (
