@@ -12,9 +12,7 @@ const NoteItem = (props) => {
   };
 
   return (
-    <li
-      key={note._id}
-      >
+    <li>
       {note.title}
       <button className="deleteButton" onClick={e => handleClick(e)} type="button">X</button>
     </li>

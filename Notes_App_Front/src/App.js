@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/_reset.scss';
 import '../styles/fonts.scss';
 import '../styles/variables.scss';
@@ -7,8 +7,7 @@ import './App.scss';
 // Component Includes
 import Header from './components/molecules/Header';
 import SideBar from './components/molecules/SideBar';
-import TaskForm from './components/organisims/TaskForm';
-import DocsList from './components/organisims/DocsList';
+import Home from './components/templates/Home';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -18,10 +17,7 @@ function App() {
       <Header />
       <section className="mainWrap">
         <SideBar notes={notes} />
-        <section className="mainInner">
-          <TaskForm currNotes={notes} setNotes={setNotes} />
-          <DocsList notes={notes} setNotes={setNotes} />
-        </section>
+        <Home notes={notes} setNotes={setNotes} />
       </section>
     </div>
   );
