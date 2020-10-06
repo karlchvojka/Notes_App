@@ -4,6 +4,7 @@ import { Editor, EditorState, RichUtils, getDefaultKeyBinding, KeyBindingUtil } 
 import 'draft-js/dist/Draft.css';
 
 import InlineStyleButtons from '../InlineStyleButtons';
+import BlockTypeButtons from '../BlockType';
 
 function keyBindingFunction(event) {
   if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === 'x') {
@@ -54,63 +55,17 @@ function EditorWrap() {
     );
   };
 
-  const renderBlockButton = (value, block) => {
-    return (
-      <input
-        type="button"
-        key={block}
-        value={value}
-        data-block={block}
-        onMouseDown={toggleBlockType}
-      />
-    );
-  };
-
-  const blockTypeButtons = [
-    {
-      value: 'Heading One',
-      block: 'header-one',
-    },
-
-    {
-      value: 'Heading Two',
-      block: 'header-two',
-    },
-
-    {
-      value: 'Heading Three',
-      block: 'header-three',
-    },
-
-    {
-      value: 'Blockquote',
-      block: 'blockquote',
-    },
-
-    {
-      value: 'Unordered List',
-      block: 'unordered-list-item',
-    },
-
-    {
-      value: 'Ordered List',
-      block: 'ordered-list-item',
-    }
-  ];
-
   return (
     <div className="my-little-app">
       <h1>Playing with Draft!</h1>
       <div className="inline-style-options">
         Inline Styles:
-        <InlineStyleButtons editorState={editorState} setEditorState={setEditorState} toggleInlineStyle={toggleInlineStyle} />
+        <InlineStyleButtons toggleInlineStyle={toggleInlineStyle} />
       </div>
 
       <div className="block-style-options">
         Block Types:
-        {blockTypeButtons.map((button) => {
-          return renderBlockButton(button.value, button.block);
-        })}
+        <BlockTypeButtons toggleBlockType={toggleBlockType} />
       </div>
       <div className="draft-editor-wrapper">
         <Editor
