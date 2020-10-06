@@ -6,6 +6,7 @@ import './App.scss';
 
 // Component Includes
 import Header from './components/molecules/Header';
+import SideBar from './components/molecules/SideBar';
 import TaskForm from './components/organisims/TaskForm';
 import DocsList from './components/molecules/DocsList';
 
@@ -15,12 +16,13 @@ function App() {
   return (
     <div id="App">
       <Header />
-      <div className="formWrap">
-        <TaskForm currNotes={notes} setNotes={setNotes} />
-      </div>
-      <div className="mainWrap">
-        <DocsList notes={notes} setNotes={setNotes} />
-      </div>
+      <section className="mainWrap">
+        <SideBar notes={notes} />
+        <section className="mainInner">
+          <TaskForm currNotes={notes} setNotes={setNotes} />
+          <DocsList notes={notes} setNotes={setNotes} />
+        </section>
+      </section>
     </div>
   );
 }

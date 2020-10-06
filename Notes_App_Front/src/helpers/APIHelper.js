@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL = "http://localhost:3000/notes"
 
 async function createNote(note) {
-  const resp = await axios.post(API_URL, note);
+  const resp = await axios.post(API_URL, note)
   return resp
 }
 

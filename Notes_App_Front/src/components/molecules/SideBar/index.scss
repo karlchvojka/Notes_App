@@ -1,0 +1,16 @@
+@import '../../../../styles/_reset.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/fonts.scss';
+
+.sidebar {
+  padding: 10px;
+  p {
+    a:link, a:visited {
+      color: $lightBlue;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $darkBlue;
+    }
+  }
+}

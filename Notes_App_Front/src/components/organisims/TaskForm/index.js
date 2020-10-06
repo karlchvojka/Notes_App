@@ -13,6 +13,7 @@ const TaskForm = (props) => {
   const [noteCat, setNoteCat] = useState('');
   const [note, setNote] = useState({});
   const [theNote, setTheNote] = useState({});
+
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
   );
@@ -47,7 +48,7 @@ const TaskForm = (props) => {
   }, [theNote]);
 
   const makeBold = () => {
-    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
+    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'));
   };
 
   return (
