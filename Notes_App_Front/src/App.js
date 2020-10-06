@@ -8,7 +8,7 @@ import './App.scss';
 import Header from './components/molecules/Header';
 import SideBar from './components/molecules/SideBar';
 import TaskForm from './components/organisims/TaskForm';
-import DocsList from './components/molecules/DocsList';
+import DocsList from './components/organisims/DocsList';
 
 function App() {
   const [notes, setNotes] = useState([]);
