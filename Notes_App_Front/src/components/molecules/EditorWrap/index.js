@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import { Editor, EditorState, RichUtils, getDefaultKeyBinding, KeyBindingUtil } from 'draft-js';
+import {
+  Editor,
+  EditorState,
+  RichUtils,
+  getDefaultKeyBinding,
+  KeyBindingUtil,
+  convertToRaw,
+} from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
 import InlineStyleButtons from '../InlineStyleButtons';
@@ -15,12 +22,13 @@ function keyBindingFunction(event) {
 }
 
 function EditorWrap({ setNoteContent }) {
-  const [editorState, setEditorState] = useState(
-    () => EditorState.createEmpty(),
-  );
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [editorProps, setEditorProps] = useState({
+    spellCheck: true,
+  });
 
-  const onChange = (editorState) => {
-    setEditorState(editorState);
+  const onChange = (incState) => {
+    setEditorState(incState);
   };
 
   const handleKeyCommand = (command) => {
@@ -36,20 +44,22 @@ function EditorWrap({ setNoteContent }) {
     event.preventDefault();
 
     const style = event.currentTarget.getAttribute('data-style');
-    setEditorState(RichUtils.toggleInlineStyle(editorState, style),
-    );
+    setEditorState(RichUtils.toggleInlineStyle(editorState, style));
   };
 
   const toggleBlockType = (event) => {
     event.preventDefault();
 
-    let block = event.currentTarget.getAttribute('data-block');
-    setEditorState(RichUtils.toggleBlockType(editorState, block),
-    );
+    const block = event.currentTarget.getAttribute('data-block');
+    setEditorState(RichUtils.toggleBlockType(editorState, block));
+  };
+
+  const saveContent = (incState) => {
+    setNoteContent(JSON.stringify(convertToRaw(incState.getCurrentContent())));
   };
 
   useEffect(() => {
-    setNoteContent(editorState);
+    saveContent(editorState);
   }, [editorState]);
 
   return (
@@ -67,10 +77,11 @@ function EditorWrap({ setNoteContent }) {
       <div className="draft-editor-wrapper">
         <Editor
           editorState={editorState}
-          onChange={onChange}
           handleKeyCommand={handleKeyCommand}
           keyBindingFn={keyBindingFunction}
-        />
+          onChange={(editorState) => setEditorState(editorState)}
+          spellCheck={editorProps.spellCheck}
+          />
       </div>
     </div>
   );
