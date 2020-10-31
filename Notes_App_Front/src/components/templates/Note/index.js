@@ -7,11 +7,11 @@ import {
 } from 'draft-js';
 import {
   BrowserRouter as Router,
-  Link
+  Link,
 } from "react-router-dom";
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
-const NoteItem = (props) => {
+const Note = (props) => {
   const { note, notes, setNotes } = props;
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [editorProps, setEditorProps] = useState({
@@ -33,12 +33,12 @@ const NoteItem = (props) => {
   };
 
   return (
-    <li>
-      <Link to={`/notes/${note._id}`}>{note.title}</Link>
+    <article>
+      <h1>{note.title}</h1>
       <Editor editorState={editorState} readOnly={editorProps.readOnly} />
       <button className="deleteButton" onClick={e => handleClick(e)} type="button">X</button>
-    </li>
+    </article>
   );
 };
 
-export default NoteItem;
+export default Note;

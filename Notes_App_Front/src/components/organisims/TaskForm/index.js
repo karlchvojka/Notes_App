@@ -9,7 +9,6 @@ import CrudHelpers from '../../../helpers/CrudHelpers.js';
 const TaskForm = (props) => {
   const [noteTitle, setNoteTitle] = useState('');
   const [noteContent, setNoteContent] = useState('');
-  const [noteDate, setNoteDate] = useState('');
   const [noteCat, setNoteCat] = useState('');
   const [note, setNote] = useState({});
   const [theNote, setTheNote] = useState({});
