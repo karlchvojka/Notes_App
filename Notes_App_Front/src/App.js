@@ -16,6 +16,7 @@ import Header from './components/molecules/Header';
 import SideBar from './components/molecules/SideBar';
 import Home from './components/templates/Home';
 import NoteForm from './components/templates/NoteForm';
+import Note from './components/templates/Note';
 
 import APIHelper from './helpers/APIHelper';
 
@@ -31,6 +32,10 @@ function App() {
     fetchNoteAndSetNotes();
   }, []);
 
+  const getSelectedNote = (id) => {
+    const theNote = notes.find(indNote => indNote._id === id);
+    return theNote;
+  };
   return (
     <Router>
       <div id="App">
@@ -45,6 +50,7 @@ function App() {
           <SideBar notes={notes} />
           <Route exact path="/" render={() => <Home notes={notes} setNotes={setNotes} />} />
           <Route exact path="/form" render={() => <NoteForm notes={notes} setNotes={setNotes} />} />
+          <Route exact path="/notes/:id" render={(props) => <Note note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} />} />
         </section>
       </div>
     </Router>

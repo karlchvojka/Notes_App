@@ -5,7 +5,7 @@ function SideBar({ notes }) {
   let categories = {};
 
   notes.map((note) => {
-    let prev = categories[note.category]
+    let prev = categories[note.category];
 
     if (!categories.hasOwnProperty(note.category)) {
       categories[note.category] = 1;
@@ -13,10 +13,9 @@ function SideBar({ notes }) {
       categories[note.category] = prev + 1;
     }
   });
-  console.log(categories);
 
   const keys = Object.keys(categories);
-  const cats = keys.map((cat, i) => {
+  const cats = keys.map((cat) => {
     return (<p key={cat}><a href="">{cat} {categories[cat]}</a></p>)
   });
 

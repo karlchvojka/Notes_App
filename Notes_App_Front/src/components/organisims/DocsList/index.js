@@ -6,7 +6,7 @@ function DocsList({ notes, setNotes }) {
   return (
     <ul>
       {
-        notes.map((note, i) => (
+        notes.map((note) => (
           <NoteItem
             key={note._id}
             note={note}
