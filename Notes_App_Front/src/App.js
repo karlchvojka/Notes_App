@@ -39,13 +39,7 @@ function App() {
   return (
     <Router>
       <div id="App">
-        <header id="mainHeader">
-          <h1>Burn_Net: Notes</h1>
-          <menu>
-            <Link to="/">Home</Link>
-            <Link to="/form">New</Link>
-          </menu>
-        </header>
+        <Header />
         <section className="mainWrap">
           <SideBar notes={notes} />
           <Route exact path="/" render={() => <Home notes={notes} setNotes={setNotes} />} />

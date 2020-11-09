@@ -1,8 +1,33 @@
 @import '../../../../styles/_reset.scss';
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/fonts.scss';
-header {
+#mainHeader {
   background-color: $headerGrey;
-  padding:20px;
-  text-align:center;
+  display:grid;
+  grid-template-areas: "title menu";
+  padding:10px;
+
+  a:link, a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  section {
+    grid-area: "title";
+  }
+
+  nav {
+    grid-area: "menu";
+    margin-top:7px;
+    text-align:right;
+
+    a:link, a:visited {
+      color:$lightBlue;
+      font-family: $paraFont;
+      font-weight: 700;
+      padding: 2px 0px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
 }
