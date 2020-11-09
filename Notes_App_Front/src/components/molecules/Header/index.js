@@ -5,11 +5,12 @@ import './index.scss';
 function Header() {
   return (
     <header id="mainHeader">
-      <h1>Burn_Net: Notes</h1>
-      <menu>
-        <div><Link to="/">Home</Link></div>
-        <div><Link to="/form">New</Link></div>
-      </menu>
+      <section>
+        <Link to="/"><h1>Burn_Net: Notes</h1></Link>
+      </section>
+      <nav>
+        <Link to="/form">New Note</Link>
+      </nav>
     </header>
   );
 }
