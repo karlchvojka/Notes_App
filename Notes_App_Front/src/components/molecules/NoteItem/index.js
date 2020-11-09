@@ -5,6 +5,7 @@ import {
   EditorState,
   convertFromRaw,
 } from 'draft-js';
+import 'draft-js/dist/Draft.css';
 import {
   BrowserRouter as Router,
   Link
