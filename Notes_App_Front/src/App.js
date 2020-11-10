@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
-} from "react-router-dom";
-
+} from 'react-router-dom';
 import '../styles/_reset.scss';
 import '../styles/fonts.scss';
 import '../styles/variables.scss';
