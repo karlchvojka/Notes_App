@@ -20,7 +20,8 @@ body {
 .mainWrap {
   display:grid;
   grid-template-columns: 150px auto;
-  height: 100%;
+  height: auto;
+  padding-top:50px;
 
   .mainInner {
     padding:20px;
