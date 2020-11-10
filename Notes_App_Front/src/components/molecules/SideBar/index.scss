@@ -3,8 +3,19 @@
 @import '../../../../styles/fonts.scss';
 
 .sidebar {
-  padding: 10px;
+  background-color:$headerGrey;
+  height: 100vh;
+  padding: 20px 10px 10px 10px;
+  -webkit-box-shadow: 0px 4px 7px 5px rgba(48,191,242,0.36);
+  box-shadow: 0px 4px 7px 5px rgba(48,191,242,0.36);
+  z-index: 5;
+
+  h3 {
+    margin-bottom:20px;
+  }
   p {
+    margin-bottom:10px;
+
     a:link, a:visited {
       color: $lightBlue;
       text-decoration: none;

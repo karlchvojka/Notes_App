@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 function SideBar({ notes }) {
@@ -16,7 +17,11 @@ function SideBar({ notes }) {
 
   const keys = Object.keys(categories);
   const cats = keys.map((cat) => {
-    return (<p key={cat}><a href="">{cat} {categories[cat]}</a></p>)
+    return (
+      <p key={cat}>
+        <Link to={`/notes/cat/${cat}`}>{cat} {categories[cat]}</Link>
+      </p>
+    );
   });
 
   return (
