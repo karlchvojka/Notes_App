@@ -22,9 +22,8 @@ function keyBindingFunction(event) {
   return getDefaultKeyBinding(event);
 }
 
-function EditorWrap({ noteContent, setNoteContent }) {
-  console.log(noteContent)
-    const [editorState, setEditorState] = useState(noteContent || '');
+function EditorWrap({ setNoteContent }) {
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const [editorProps, setEditorProps] = useState({
     spellCheck: true,

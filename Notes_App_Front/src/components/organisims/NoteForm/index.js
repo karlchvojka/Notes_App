@@ -6,21 +6,21 @@ import EditorWrap from '../../molecules/EditorWrap';
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
-const EditNoteForm = ({ currNotes, incNote, setNotes }) => {
-  const [noteTitle, setNoteTitle] = useState(incNote.title);
-  const [noteContent, setNoteContent] = useState(incNote.content);
-  const [noteCat, setNoteCat] = useState(incNote.category);
+const NoteForm = (props) => {
+  const [noteTitle, setNoteTitle] = useState('');
+  const [noteContent, setNoteContent] = useState('');
+  const [noteCat, setNoteCat] = useState('');
   const [note, setNote] = useState({});
   const [theNote, setTheNote] = useState({});
 
   const fetchNoteAndSetNotes = async () => {
     const notes = await APIHelper.getAllNotes();
-    setNotes(notes);
+    props.setNotes(notes);
   };
 
   const handleSubmit = (e) => {
     const createNote = CrudHelpers.createNote(e, note);
-    setNotes([...currNotes, createNote]);
+    props.setNotes([...props.currNotes, createNote]);
     setTheNote(createNote);
   };
 
@@ -63,7 +63,7 @@ const EditNoteForm = ({ currNotes, incNote, setNotes }) => {
           value={noteCat}
           />
       </label>
-      <EditorWrap noteContent={note.content} setNoteContent={setNoteContent} />
+      <EditorWrap setNoteContent={setNoteContent} />
       <button id="submitButton" type="submit">
         Add
       </button>
@@ -71,4 +71,4 @@ const EditNoteForm = ({ currNotes, incNote, setNotes }) => {
   );
 };
 
-export default EditNoteForm;
+export default NoteForm;
