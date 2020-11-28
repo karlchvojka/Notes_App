@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 3dcd718df77eb3da0276f980eef4d80815de670b Karl Chvojka <karl.chvojka@protonmail.com> 1601060669 -0400	branch: Created from HEAD
+3dcd718df77eb3da0276f980eef4d80815de670b 777864458c9cba07a2d2a880bda4dc16106345dc Karl Chvojka <karl.chvojka@protonmail.com> 1601065973 -0400	commit: Seperated out the form, and the list items. Refactored the map
+777864458c9cba07a2d2a880bda4dc16106345dc 7d8aba99567316c513f84e82e4ef74275cd1e0a9 Karl Chvojka <karl.chvojka@protonmail.com> 1601070381 -0400	commit: Cleaned up some styles
+7d8aba99567316c513f84e82e4ef74275cd1e0a9 846602ff21891449989bb5e11bb59b75e7abd259 Karl Chvojka <karl.chvojka@protonmail.com> 1601074468 -0400	commit: cleaned up some last things
+846602ff21891449989bb5e11bb59b75e7abd259 a403b134a3c465c565d67d09e4f425dacba4270d Karl Chvojka <karl.chvojka@protonmail.com> 1601949523 -0400	pull origin master: Fast-forward

@@ -12,10 +12,10 @@ import {
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
 const Note = (props) => {
-  const { note, notes, setNotes } = props;
+  const { readOnly, note, notes, setNotes } = props;
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [editorProps, setEditorProps] = useState({
-    readOnly: true,
+    read: readOnly,
   });
 
   const loadContent = () => {
@@ -35,7 +35,7 @@ const Note = (props) => {
   return (
     <article>
       <h1>{note.title}</h1>
-      <Editor editorState={editorState} readOnly={editorProps.readOnly} />
+      <Editor editorState={editorState} />
       <button className="deleteButton" onClick={e => handleClick(e)} type="button">X</button>
     </article>
   );

@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 a403b134a3c465c565d67d09e4f425dacba4270d Karl Chvojka <karl.chvojka@protonmail.com> 1601950506 -0400	branch: Created from HEAD
+a403b134a3c465c565d67d09e4f425dacba4270d 00ab57fb97cb21917dd79b973deccd4235c763fe Karl Chvojka <karl.chvojka@protonmail.com> 1601953183 -0400	commit: Category now counts stuff
+00ab57fb97cb21917dd79b973deccd4235c763fe d079ba6bcdbafdebe49397828d71926e2d8a59af Karl Chvojka <karl.chvojka@protonmail.com> 1602002717 -0400	pull origin master: Fast-forward
+d079ba6bcdbafdebe49397828d71926e2d8a59af 5d1cc02f9e27ff65777882f16965b22e6d968902 Karl Chvojka <karl.chvojka@protonmail.com> 1602008841 -0400	commit: Split off inline styles to its own component
+5d1cc02f9e27ff65777882f16965b22e6d968902 08fb72c3e4c6ffdb489559d3c4fe66f25a90dc6e Karl Chvojka <karl.chvojka@protonmail.com> 1602009327 -0400	commit: Implement Block Style differences
+08fb72c3e4c6ffdb489559d3c4fe66f25a90dc6e e9d523c9763a491dc06b98d46eacd98b6feb9142 Karl Chvojka <karl.chvojka@protonmail.com> 1602011441 -0400	pull origin master: Fast-forward
+e9d523c9763a491dc06b98d46eacd98b6feb9142 b679c940d78531973044de9b389af256757274dd Karl Chvojka <karl.chvojka@protonmail.com> 1602017510 -0400	commit: Implemented basic block styles, date is now added automatically, not by input.
+b679c940d78531973044de9b389af256757274dd 0d8623887453d66c6af559be2de6da11bc786db3 Karl Chvojka <karl.chvojka@protonmail.com> 1604094931 -0400	pull origin master: Fast-forward
+0d8623887453d66c6af559be2de6da11bc786db3 7e79d5610d992e1ba1c9c0fd5efcb177bbebad32 Karl Chvojka <karl.chvojka@protonmail.com> 1604094976 -0400	commit: base functionality works
+7e79d5610d992e1ba1c9c0fd5efcb177bbebad32 a2b1788306ff81b4984cdf03f16b193c538056b1 Karl Chvojka <karl.chvojka@protonmail.com> 1604130271 -0400	commit: Notes now can be accessed via their own route.
+a2b1788306ff81b4984cdf03f16b193c538056b1 bfcf34f50959d313ec55b16a9a66d90d0134d502 Karl Chvojka <karl.chvojka@protonmail.com> 1604626762 -0500	pull origin master: Fast-forward
+bfcf34f50959d313ec55b16a9a66d90d0134d502 f88a32087d3f32e7e86bd603795cd4552305b097 Karl Chvojka <karl.chvojka@protonmail.com> 1604958888 -0500	commit: Added Draft default styles to the editor

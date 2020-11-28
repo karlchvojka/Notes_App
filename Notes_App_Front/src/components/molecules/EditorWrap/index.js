@@ -7,6 +7,7 @@ import {
   getDefaultKeyBinding,
   KeyBindingUtil,
   convertToRaw,
+  convertFromRaw,
 } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
@@ -21,8 +22,10 @@ function keyBindingFunction(event) {
   return getDefaultKeyBinding(event);
 }
 
-function EditorWrap({ setNoteContent }) {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+function EditorWrap({ noteContent, setNoteContent }) {
+  console.log(noteContent)
+    const [editorState, setEditorState] = useState(noteContent || '');
+
   const [editorProps, setEditorProps] = useState({
     spellCheck: true,
   });

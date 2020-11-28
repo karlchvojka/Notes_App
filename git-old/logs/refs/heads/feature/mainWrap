@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 f2adea72a5a0415289135bd47d133feb1995f7d9 Karl Chvojka <karl.chvojka@protonmail.com> 1601946827 -0400	branch: Created from HEAD
+f2adea72a5a0415289135bd47d133feb1995f7d9 77e9fb7fc71bb3189335e03ac3123da51a67f12f Karl Chvojka <karl.chvojka@protonmail.com> 1601946874 -0400	commit: Finished mainWrap
+77e9fb7fc71bb3189335e03ac3123da51a67f12f 7853ecfda1c0710e9b5a9a1ac158b4abaeb6e49b Karl Chvojka <karl.chvojka@protonmail.com> 1601949202 -0400	commit: Implemented router for switching the main area

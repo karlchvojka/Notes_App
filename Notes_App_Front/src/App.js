@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
 } from 'react-router-dom';
 import '../styles/_reset.scss';
 import '../styles/fonts.scss';
@@ -44,10 +45,13 @@ function App() {
         <Header />
         <section className="mainWrap">
           <SideBar notes={notes} />
-          <Route exact path="/" render={() => <Home notes={notes} setNotes={setNotes} />} />
-          <Route exact path="/form" render={() => <NoteForm notes={notes} setNotes={setNotes} />} />
-          <Route exact path="/notes/cat/:cat" render={(props) => <Home notes={getNotesByCat(props.match.params.cat)} setNotes={setNotes} />} />
-          <Route exact path="/notes/:id" render={(props) => <Note note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} />} />
+          <Switch>
+            <Route exact path="/" render={() => <Home notes={notes} setNotes={setNotes} />} />
+            <Route exact path="/form" render={() => <NoteForm notes={notes} setNotes={setNotes} />} />
+            <Route exact path="/notes/cat/:cat" render={(props) => <Home notes={getNotesByCat(props.match.params.cat)} setNotes={setNotes} />} />
+            <Route exact path="/notes/:id" render={(props) => <Note note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} readOnly />} />
+            <Route exact path="/notes/:id/edit" render={(props) => <NoteForm note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} />} />
+          </Switch>
         </section>
       </div>
     </Router>

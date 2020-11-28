@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 5bee4ea9d53856d8de9163a5d34f5b3fcb74d9ba Karl Chvojka <karl.chvojka@protonmail.com> 1601075132 -0400	branch: Created from HEAD
+5bee4ea9d53856d8de9163a5d34f5b3fcb74d9ba 3a464c1ac88e944960e713ca50b96d41a90dcf46 Karl Chvojka <karl.chvojka@protonmail.com> 1601078009 -0400	commit: Implemented Jest config. EOD PUSH
+3a464c1ac88e944960e713ca50b96d41a90dcf46 40413b41acc3901807cddd9fe8c00035d585657f Karl Chvojka <karl.chvojka@protonmail.com> 1601078350 -0400	commit: Front End Readme Updates
+40413b41acc3901807cddd9fe8c00035d585657f c60b46702306210ef32a02f0f881ae9383be284c Karl Chvojka <karl.chvojka@protonmail.com> 1601167607 -0400	commit: Trying..
+c60b46702306210ef32a02f0f881ae9383be284c ee85332da1471a7d5f51bac0cb36709a64999eb8 Karl Chvojka <karl.chvojka@protonmail.com> 1601428253 -0400	commit: Seperated delete, and create crud functions to a helper file
+ee85332da1471a7d5f51bac0cb36709a64999eb8 9f58076af714af5f95cc28a34b2d8a18ecc567cd Karl Chvojka <karl.chvojka@protonmail.com> 1601434031 -0400	commit: EOD push
+9f58076af714af5f95cc28a34b2d8a18ecc567cd f79708054aee13a0e56308b7c85e804de143d675 Karl Chvojka <karl.chvojka@protonmail.com> 1601919014 -0400	commit: EOD testing

@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 c980a300116684319e770ce03a7090415be947b3 Karl Chvojka <karl.chvojka@protonmail.com> 1601939182 -0400	branch: Created from HEAD
+c980a300116684319e770ce03a7090415be947b3 51df1f4e3f89bb4a15d10730eac55117506801d2 Karl Chvojka <karl.chvojka@protonmail.com> 1601939774 -0400	commit: Completed seperating header into its own component
+51df1f4e3f89bb4a15d10730eac55117506801d2 7a0758fe3fb03050f4d553e8e31e5379472b80f7 Karl Chvojka <karl.chvojka@protonmail.com> 1604959465 -0500	pull origin master: Fast-forward
+7a0758fe3fb03050f4d553e8e31e5379472b80f7 3f27a082f52241d5e926fc1851ecf49adb5d3715 Karl Chvojka <karl.chvojka@protonmail.com> 1604961929 -0500	commit: Cleaned up header
