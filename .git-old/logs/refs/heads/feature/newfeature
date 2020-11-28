@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 64f7732fd6a1fb59ed93847f3e35c2907092d3c1 Karl Chvojka <karl.chvojka@protonmail.com> 1600808281 -0400	branch: Created from HEAD
-64f7732fd6a1fb59ed93847f3e35c2907092d3c1 37827e46e4f3a378682863879240d19b720c4163 Karl Chvojka <karl.chvojka@protonmail.com> 1600808328 -0400	pull origin master: Fast-forward
-37827e46e4f3a378682863879240d19b720c4163 db42454a14c2f1d27b9fd3a4a27dc37425985295 Karl Chvojka <karl.chvojka@protonmail.com> 1600813173 -0400	commit: Finishing up the backend work
-db42454a14c2f1d27b9fd3a4a27dc37425985295 a3f544135d97f054bdda704777bc282ed2bfea20 Karl Chvojka <karl.chvojka@protonmail.com> 1600964556 -0400	commit: EOD push
-a3f544135d97f054bdda704777bc282ed2bfea20 6c08945d139acb8e8d7ae3a3209860551846a4dc Karl Chvojka <karl.chvojka@protonmail.com> 1601054870 -0400	commit: EOD
-6c08945d139acb8e8d7ae3a3209860551846a4dc 392d15b0be47c92fc2a866878a9306782b115bd3 Karl Chvojka <karl.chvojka@protonmail.com> 1601060573 -0400	commit: Finished up getting the post and get routes.
