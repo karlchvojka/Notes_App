@@ -42,32 +42,34 @@ const NoteForm = (props) => {
   }, [theNote]);
 
   return (
-    <form id="taskForm" onSubmit={handleSubmit}>
-      <label htmlFor="noteTitleInput">
-        <span>Title:</span>
-        <input
-          id="noteTitleInput"
-          name="titleInput"
-          onChange={({ target }) => setNoteTitle(target.value)}
-          type="text"
-          value={noteTitle}
-          />
-      </label>
-      <label htmlFor="noteCatInput">
-        <span>Category:</span>
-        <input
-          id="noteCatInput"
-          name="catInput"
-          onChange={({ target }) => setNoteCat(target.value)}
-          type="text"
-          value={noteCat}
-          />
-      </label>
-      <EditorWrap setNoteContent={setNoteContent} />
-      <button id="submitButton" type="submit">
-        Add
-      </button>
-    </form>
+    <section className="formInner">
+      <form id="taskForm" onSubmit={handleSubmit}>
+        <label htmlFor="noteTitleInput">
+          <span>Title:</span>
+          <input
+            id="noteTitleInput"
+            name="titleInput"
+            onChange={({ target }) => setNoteTitle(target.value)}
+            type="text"
+            value={noteTitle}
+            />
+        </label>
+        <label htmlFor="noteCatInput">
+          <span>Category:</span>
+          <input
+            id="noteCatInput"
+            name="catInput"
+            onChange={({ target }) => setNoteCat(target.value)}
+            type="text"
+            value={noteCat}
+            />
+        </label>
+        <EditorWrap setNoteContent={setNoteContent} />
+        <button id="submitButton" type="submit">
+          Add
+        </button>
+      </form>
+    </section>
   );
 };
 

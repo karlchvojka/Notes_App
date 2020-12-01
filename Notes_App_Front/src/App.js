@@ -13,7 +13,7 @@ import './App.scss';
 import Header from './components/molecules/Header';
 import SideBar from './components/molecules/SideBar';
 import Home from './components/templates/Home';
-import NoteFormWrap from './components/templates/NoteFormWrap';
+import NoteForm from './components/organisims/NoteForm';
 import Note from './components/templates/Note';
 
 import APIHelper from './helpers/APIHelper';
@@ -47,7 +47,7 @@ function App() {
           <SideBar notes={notes} />
           <Switch>
             <Route exact path="/" render={() => <Home notes={notes} setNotes={setNotes} />} />
-            <Route exact path="/form" render={() => <NoteFormWrap notes={notes} setNotes={setNotes} />} />
+            <Route exact path="/form" render={() => <NoteForm currNotes={notes} setNotes={setNotes} />} />
             <Route exact path="/notes/cat/:cat" render={(props) => <Home notes={getNotesByCat(props.match.params.cat)} setNotes={setNotes} />} />
             <Route exact path="/notes/:id" render={(props) => <Note note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} readOnly />} />
           </Switch>
