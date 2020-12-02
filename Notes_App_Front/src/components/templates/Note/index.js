@@ -12,11 +12,8 @@ import {
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
 const Note = (props) => {
-  const { readOnly, note, notes, setNotes } = props;
+  const { note, notes, setNotes } = props;
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [editorProps, setEditorProps] = useState({
-    read: readOnly,
-  });
 
   const loadContent = () => {
     const content = convertFromRaw(JSON.parse(note.content));
@@ -35,6 +32,7 @@ const Note = (props) => {
   return (
     <article>
       <h1>{note.title}</h1>
+      <p>Category: {note.category}</p>
       <Editor editorState={editorState} />
       <button className="deleteButton" onClick={e => handleClick(e)} type="button">X</button>
     </article>

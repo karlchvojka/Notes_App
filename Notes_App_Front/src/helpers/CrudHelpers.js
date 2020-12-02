@@ -20,7 +20,14 @@ const createNote = async (e, note) => {
   return newNote;
 };
 
+const updateNote = async (e, noteID, note) => {
+  e.stopPropagation();
+  const updatedNote = await APIHelper.updateNote(note, noteID);
+  return updatedNote;
+};
+
 export default {
   createNote,
   deleteNote,
+  updateNote,
 };

@@ -8,12 +8,12 @@ async function createNote(note) {
 }
 
 async function deleteNote(id) {
-  const message = await axios.delete(`${API_URL}/${id}`)
+  const message = await axios.delete(`${API_URL}/${id}`);
   return message;
 }
 
-async function updateNote(id, payload) {
-  const { data: newNote } = await axios.put(`${API_URL}/${id}`, payload);
+async function updateNote(note, noteID) {
+  const { data: newNote } = await axios.put(`${API_URL}/${noteID}`, note);
   return newNote;
 }
 

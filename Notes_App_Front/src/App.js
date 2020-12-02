@@ -14,6 +14,7 @@ import Header from './components/molecules/Header';
 import SideBar from './components/molecules/SideBar';
 import Home from './components/templates/Home';
 import NoteForm from './components/organisims/NoteForm';
+import NoteFormEdit from './components/organisims/NoteFormEdit';
 import Note from './components/templates/Note';
 
 import APIHelper from './helpers/APIHelper';
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/form" render={() => <NoteForm currNotes={notes} setNotes={setNotes} />} />
             <Route exact path="/notes/cat/:cat" render={(props) => <Home notes={getNotesByCat(props.match.params.cat)} setNotes={setNotes} />} />
             <Route exact path="/notes/:id" render={(props) => <Note note={getSelectedNote(props.match.params.id)} notes={notes} setNotes={setNotes} readOnly />} />
+            <Route exact path="/notes/:id/edit" render={(props) => <NoteFormEdit note={getSelectedNote(props.match.params.id)} noteID={props.match.params.id} notes={notes} setNotes={setNotes} readOnly />} />
           </Switch>
         </section>
       </div>
