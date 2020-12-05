@@ -9,7 +9,11 @@ function Header() {
         <Link to="/"><h1>Burn_Net: Notes</h1></Link>
       </section>
       <nav>
-        <Link to="/form">New Note</Link>
+        <ul>
+          <li className="addNoteLink">
+            <Link to="/form">+</Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
