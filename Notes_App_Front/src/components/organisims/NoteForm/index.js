@@ -6,7 +6,7 @@ import EditorWrap from '../../molecules/EditorWrap';
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
-const TaskForm = (props) => {
+const NoteForm = (props) => {
   const [noteTitle, setNoteTitle] = useState('');
   const [noteContent, setNoteContent] = useState('');
   const [noteCat, setNoteCat] = useState('');
@@ -42,33 +42,35 @@ const TaskForm = (props) => {
   }, [theNote]);
 
   return (
-    <form id="taskForm" onSubmit={handleSubmit}>
-      <label htmlFor="noteTitleInput">
-        <span>Title:</span>
-        <input
-          id="noteTitleInput"
-          name="titleInput"
-          onChange={({ target }) => setNoteTitle(target.value)}
-          type="text"
-          value={noteTitle}
-          />
-      </label>
-      <label htmlFor="noteCatInput">
-        <span>Category:</span>
-        <input
-          id="noteCatInput"
-          name="catInput"
-          onChange={({ target }) => setNoteCat(target.value)}
-          type="text"
-          value={noteCat}
-          />
-      </label>
-      <EditorWrap setNoteContent={setNoteContent} />
-      <button id="submitButton" type="submit">
-        Add
-      </button>
-    </form>
+    <section className="formInner">
+      <form id="taskForm" onSubmit={handleSubmit}>
+        <label htmlFor="noteTitleInput">
+          <span>Title:</span>
+          <input
+            id="noteTitleInput"
+            name="titleInput"
+            onChange={({ target }) => setNoteTitle(target.value)}
+            type="text"
+            value={noteTitle}
+            />
+        </label>
+        <label htmlFor="noteCatInput">
+          <span>Category:</span>
+          <input
+            id="noteCatInput"
+            name="catInput"
+            onChange={({ target }) => setNoteCat(target.value)}
+            type="text"
+            value={noteCat}
+            />
+        </label>
+        <EditorWrap setNoteContent={setNoteContent} />
+        <button id="submitButton" type="submit">
+          Add
+        </button>
+      </form>
+    </section>
   );
 };
 
-export default TaskForm;
+export default NoteForm;

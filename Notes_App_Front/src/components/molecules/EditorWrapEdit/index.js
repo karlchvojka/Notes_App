@@ -22,8 +22,10 @@ function keyBindingFunction(event) {
   return getDefaultKeyBinding(event);
 }
 
-function EditorWrap({ setNoteContent }) {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+function EditorWrapEdit({ noteContent, setNoteContent }) {
+  const [editorState, setEditorState] = useState(
+    EditorState.createWithContent(convertFromRaw(JSON.parse(noteContent)))
+  );
 
   const [editorProps, setEditorProps] = useState({
     spellCheck: true,
@@ -88,4 +90,4 @@ function EditorWrap({ setNoteContent }) {
   );
 }
 
-export default EditorWrap;
+export default EditorWrapEdit;

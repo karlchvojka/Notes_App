@@ -1,18 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: "./src/index.html",
   filename: "./index.html"
-})
+});
 
 module.exports = {
   entry: "./src",
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "/"),
     filename: "bundle.js",
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -70,5 +72,8 @@ module.exports = {
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true
+  }
 };
