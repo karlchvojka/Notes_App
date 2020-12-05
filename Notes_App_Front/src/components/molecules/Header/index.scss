@@ -5,12 +5,12 @@
   background-color: $headerGrey;
   display:grid;
   grid-template-areas: "title menu";
-  padding:10px;
+  padding:2%;
   z-index: 10;
   -webkit-box-shadow: 0px 0px 7px 5px rgba(48,191,242,0.36);
   box-shadow: 0px 0px 7px 5px rgba(48,191,242,0.36);
   position:fixed;
-  width:100%;
+  width:96%;
 
   a:link, a:visited {
     text-decoration: none;
@@ -23,16 +23,37 @@
 
   nav {
     grid-area: menu;
-    margin-top:7px;
+    margin-top: 5px;
     text-align:right;
 
-    a:link, a:visited {
-      color:$lightBlue;
-      font-family: $paraFont;
-      font-weight: 700;
-      padding: 2px 0px;
-      text-decoration: none;
-      text-transform: uppercase;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      .addNoteLink {
+        background-color: #0A5573;
+        box-shadow: 0px 0px 2px 3px rgba(48,191,242,0.36);
+        height: 20px;
+        width: 20px;
+        -webkit-box-shadow: 0px 0px 2px 3px rgba(48,191,242,0.36);
+
+
+        a:link, a:visited {
+          background-color: $lightBlue;
+          color: #000;
+          display:block;
+          font-family: $paraFont;
+          font-size:19px;
+          font-weight: 700;
+          height: 100%;
+          text-align:center;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: 100%;
+        }
+      }
     }
   }
 }
