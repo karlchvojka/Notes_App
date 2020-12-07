@@ -5,12 +5,11 @@
   background-color: $headerGrey;
   display:grid;
   grid-template-areas: "title menu";
-  padding:2%;
   z-index: 10;
   -webkit-box-shadow: 0px 0px 7px 5px rgba(48,191,242,0.36);
   box-shadow: 0px 0px 7px 5px rgba(48,191,242,0.36);
   position:fixed;
-  width:96%;
+  width:100%;
 
   a:link, a:visited {
     text-decoration: none;
@@ -19,11 +18,12 @@
 
   section {
     grid-area: title;
+    margin: 20px;
   }
 
   nav {
     grid-area: menu;
-    margin-top: 5px;
+    margin: 25px;
     text-align:right;
 
     ul {
@@ -35,7 +35,6 @@
       .addNoteLink {
         height: 20px;
         width: 20px;
-
 
         a:link, a:visited {
           color: $lightBlue;

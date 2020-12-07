@@ -40,14 +40,17 @@
 
       button {
         background-color:$darkGrey;
-        border: 1px solid $lightBlue;
+        border: 0px;
         color: $lightBlue;
+        font-size:15px;
+      }
+      button:hover {
+        cursor:pointer;
       }
       .editButton {
         background-color:$darkGrey;
-        border: 1px solid $lightBlue;
         color: $lightBlue;
-        font-family: $cyberFont;
+        font-size:15px;
         padding: 0px 5px;
         text-decoration: none;
 
