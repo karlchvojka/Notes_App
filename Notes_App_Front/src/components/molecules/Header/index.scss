@@ -33,16 +33,12 @@
       align-items: flex-end;
 
       .addNoteLink {
-        background-color: #0A5573;
-        box-shadow: 0px 0px 2px 3px rgba(48,191,242,0.36);
         height: 20px;
         width: 20px;
-        -webkit-box-shadow: 0px 0px 2px 3px rgba(48,191,242,0.36);
 
 
         a:link, a:visited {
-          background-color: $lightBlue;
-          color: #000;
+          color: $lightBlue;
           display:block;
           font-family: $paraFont;
           font-size:19px;
