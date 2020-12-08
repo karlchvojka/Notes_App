@@ -19,7 +19,7 @@ function SideBar({ notes }) {
   const cats = keys.map((cat) => {
     return (
       <p key={cat}>
-        <Link to={`/notes/cat/${cat}`}>{cat} {categories[cat]}</Link>
+        <Link to={`/notes/cat/${cat}`}><span>[{categories[cat]}]</span> {cat}</Link>
       </p>
     );
   });
