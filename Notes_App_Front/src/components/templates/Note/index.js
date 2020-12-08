@@ -9,6 +9,7 @@ import {
   BrowserRouter as Router,
   Link,
 } from "react-router-dom";
+import { FaPen, FaTrash } from 'react-icons/fa';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
 const Note = (props) => {
@@ -24,17 +25,16 @@ const Note = (props) => {
     loadContent();
   }, []);
 
-  const handleClick = (e) => {
-    CrudHelpers.deleteNote(e, note._id);
-    setNotes(notes.filter(({ _id: i }) => note._id !== i));
-  };
-
   return (
-    <article>
-      <h1>{note.title}</h1>
+    <article className="noteWrap">
+      <section className="noteHeader">
+        <h1>{note.title}</h1>
+        <div>
+          <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
+        </div>
+      </section>
       <p>Category: {note.category}</p>
       <Editor editorState={editorState} />
-      <button className="deleteButton" onClick={e => handleClick(e)} type="button">X</button>
     </article>
   );
 };

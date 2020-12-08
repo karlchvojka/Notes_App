@@ -1,0 +1,31 @@
+@import '../../../../styles/_reset.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/fonts.scss';
+
+.noteWrap {
+  margin: 20px;
+
+  .noteHeader {
+    display: flex;
+    justify-content: space-between;
+
+    .editButton {
+      background-color:$darkGrey;
+      color: $lightBlue;
+      font-size:15px;
+      padding: 0px 5px;
+      text-decoration: none;
+
+    }
+    
+    button {
+      background-color:$darkGrey;
+      border: 0px;
+      color: $lightBlue;
+      font-size:15px;
+    }
+    button:hover {
+      cursor:pointer;
+    }
+  }
+}
