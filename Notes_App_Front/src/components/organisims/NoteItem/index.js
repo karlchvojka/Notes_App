@@ -7,8 +7,7 @@ import {
 import dayjs from 'dayjs';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FaPen, FaTrash } from 'react-icons/fa';
 
 const NoteItem = (props) => {
   const { note, notes, setNotes } = props;
@@ -33,8 +32,8 @@ const NoteItem = (props) => {
           </p>
         </div>
         <div className="itemHeadRight">
-          <Link className="editButton" to={`/notes/${note._id}/edit`}><FontAwesomeIcon icon={faPen} /></Link>
-          <button className="deleteButton" onClick={e => handleDeleteClick(e)} type="button"><FontAwesomeIcon icon={faTrash} /></button>
+          <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
+          <button className="deleteButton" onClick={e => handleDeleteClick(e)} type="button"><FaTrash /></button>
         </div>
       </div>
     </li>

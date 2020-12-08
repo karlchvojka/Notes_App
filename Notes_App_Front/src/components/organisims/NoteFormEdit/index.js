@@ -73,7 +73,7 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
         </label>
         <EditorWrapEdit noteContent={noteContent} setNoteContent={setNoteContent} />
         <button id="submitButton" type="submit">
-          Add
+          Edit
         </button>
       </form>
     </section>

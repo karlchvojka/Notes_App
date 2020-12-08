@@ -1,48 +1,52 @@
 import React from 'react';
 import './index.scss';
+import { FaHeading } from 'react-icons/fa';
+import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr';
+
 
 function BlockTypeButtons({ toggleBlockType }) {
   const blockTypeButtons = [
     {
-      value: 'Heading One',
+      value: <span>H1</span>,
       block: 'header-one',
     },
 
     {
-      value: 'Heading Two',
+      value: <span>H2</span>,
       block: 'header-two',
     },
 
     {
-      value: 'Heading Three',
+      value: <span>H3</span>,
       block: 'header-three',
     },
 
     {
-      value: 'Blockquote',
+      value: <GrBlockQuote />,
       block: 'blockquote',
     },
 
     {
-      value: 'Unordered List',
+      value: <GrUnorderedList />,
       block: 'unordered-list-item',
     },
 
     {
-      value: 'Ordered List',
+      value: <GrOrderedList />,
       block: 'ordered-list-item',
     }
   ];
 
   return blockTypeButtons.map((button) =>
     (
-      <input
+      <button
+        className="blockstyleButton"
         data-block={button.block}
         key={button.block}
-        type="button"
         onMouseDown={toggleBlockType}
-        value={button.value}
-      />
+      >
+        {button.value}
+      </button>
     ));
 }
 
