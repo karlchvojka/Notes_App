@@ -3,11 +3,8 @@
 @import '../../../../styles/fonts.scss';
 
 .sidebar {
-  background-color:$headerGrey;
-  height: 100vh;
-  padding: 20px 10px 10px 10px;
-  -webkit-box-shadow: 0px 4px 7px 5px rgba(48,191,242,0.36);
-  box-shadow: 0px 4px 7px 5px rgba(48,191,242,0.36);
+  height: 89vh;
+  padding: 20px 10px 0px 10px;
   z-index: 5;
 
   h3 {
@@ -15,6 +12,8 @@
   }
   p {
     margin-bottom:10px;
+    font-family: $cyberFont;
+    text-transform: uppercase;
 
     a:link, a:visited {
       color: $lightBlue;
@@ -22,6 +21,10 @@
     }
     a:hover {
       color: $darkBlue;
+    }
+
+    span {
+      font-weight:700;
     }
   }
 }
