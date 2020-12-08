@@ -1,43 +1,47 @@
 import React from 'react';
 import './index.scss';
 
+import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa';
+
+
 function InlineStyleButtons({ toggleInlineStyle }) {
   const inlineStyleButtons = [
     {
       style: 'BOLD',
-      value: 'Bold',
+      value: <FaBold />,
     },
 
     {
       style: 'ITALIC',
-      value: 'Italic',
+      value: <FaItalic />,
     },
 
     {
       style: 'UNDERLINE',
-      value: 'Underline',
+      value: <FaUnderline />,
     },
 
     {
       style: 'STRIKETHROUGH',
-      value: 'Strikethrough',
+      value: <FaStrikethrough />,
     },
 
     {
       style: 'CODE',
-      value: 'Code',
+      value: <FaCode />,
     },
   ];
-
+  console.log(inlineStyleButtons[1].value)
   return inlineStyleButtons.map((button) =>
     (
-      <input
+      <button
+        className="inlineStyleButton"
         data-style={button.style}
         key={button.style}
         onMouseDown={toggleInlineStyle}
-        type="button"
-        value={button.value}
-        />
+      >
+        {button.value}
+      </button>
     ));
 }
 

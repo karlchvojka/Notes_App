@@ -66,7 +66,7 @@ const NoteForm = (props) => {
         </label>
         <EditorWrap setNoteContent={setNoteContent} />
         <button id="submitButton" type="submit">
-          Add
+          Submit
         </button>
       </form>
     </section>

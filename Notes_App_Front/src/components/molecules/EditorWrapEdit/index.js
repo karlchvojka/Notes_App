@@ -69,12 +69,9 @@ function EditorWrapEdit({ noteContent, setNoteContent }) {
   return (
     <div className="my-little-app">
       <div className="inline-style-options">
-        Inline Styles:
         <InlineStyleButtons toggleInlineStyle={toggleInlineStyle} />
       </div>
-
       <div className="block-style-options">
-        Block Types:
         <BlockTypeButtons toggleBlockType={toggleBlockType} />
       </div>
       <div className="draft-editor-wrapper">

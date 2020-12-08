@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { FaPen } from 'react-icons/fa';
+
 import './index.scss';
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
       <nav>
         <ul>
           <li className="addNoteLink">
-            <Link to="/form"><FontAwesomeIcon icon={faPen} /></Link>
+            <Link to="/form"><FaPen/></Link>
           </li>
         </ul>
       </nav>
