@@ -17,7 +17,7 @@
       text-decoration: none;
 
     }
-    
+
     button {
       background-color:$darkGrey;
       border: 0px;
@@ -27,5 +27,9 @@
     button:hover {
       cursor:pointer;
     }
+  }
+
+  .DraftEditor-root {
+    color: $lightBlue;
   }
 }
