@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import DocsList from '../../organisims/DocsList';
+import DocsList from './DocsList';
 
 function Home({ notes, setNotes }) {
   return (

@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 
-import EditorWrapEdit from '../../molecules/EditorWrapEdit';
+import EditorWrap from './EditorWrap';
 
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
-const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
-  const [noteTitle, setNoteTitle] = useState(note.title);
-  const [noteContent, setNoteContent] = useState(note.content);
-  const [noteCat, setNoteCat] = useState(note.category);
-  const [noteDate, setNoteDate] = useState(note.date);
-  const [theNote, setTheNote] = useState(note);
+const NoteForm = (props) => {
+  const [noteTitle, setNoteTitle] = useState('');
+  const [noteContent, setNoteContent] = useState('');
+  const [noteCat, setNoteCat] = useState('');
+  const [note, setNote] = useState({});
+  const [theNote, setTheNote] = useState({});
 
   const fetchNoteAndSetNotes = async () => {
-    const currNotes = await APIHelper.getAllNotes();
-    setNotes(currNotes);
+    const notes = await APIHelper.getAllNotes();
+    props.setNotes(notes);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setTheNote({
-      category: noteCat,
-      content: noteContent,
-      date: noteDate,
-      title: noteTitle,
-    });
-    const updateNote = CrudHelpers.updateNote(e, noteID, theNote);
-    setNotes([...notes, updateNote]);
-    setTheNote(updateNote);
+    const createNote = CrudHelpers.createNote(e, note);
+    props.setNotes([...props.currNotes, createNote]);
+    setTheNote(createNote);
   };
 
   useEffect(() => {
-    setTheNote({
+    setNote({
       category: noteCat,
       content: noteContent,
       date: new Date(),
@@ -71,13 +64,13 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
             value={noteCat}
             />
         </label>
-        <EditorWrapEdit noteContent={noteContent} setNoteContent={setNoteContent} />
+        <EditorWrap setNoteContent={setNoteContent} />
         <button id="submitButton" type="submit">
-          Edit
+          Submit
         </button>
       </form>
     </section>
   );
 };
 
-export default NoteFormEdit;
+export default NoteForm;

@@ -5,7 +5,7 @@ import {
   Link
 } from "react-router-dom";
 import dayjs from 'dayjs';
-import CrudHelpers from '../../../helpers/CrudHelpers.js';
+import CrudHelpers from '../../../../../helpers/CrudHelpers.js';
 
 import { FaPen, FaTrash } from 'react-icons/fa';
 
