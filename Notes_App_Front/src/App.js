@@ -10,12 +10,12 @@ import '../styles/variables.scss';
 import './App.scss';
 
 // Component Includes
-import Header from './components/molecules/Header';
-import SideBar from './components/molecules/SideBar';
-import Home from './components/templates/Home';
-import NoteForm from './components/organisims/NoteForm';
-import NoteFormEdit from './components/organisims/NoteFormEdit';
-import Note from './components/templates/Note';
+import Header from './components/Globals/Header';
+import SideBar from './components/Globals/SideBar';
+import Home from './components/Pages/Home';
+import NoteForm from './components/Pages/NoteForm';
+import NoteFormEdit from './components/Pages/NoteFormEdit';
+import Note from './components/Pages/Note';
 
 import APIHelper from './helpers/APIHelper';
 
