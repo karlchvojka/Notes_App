@@ -1,10 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import './index.scss';
+import styled from 'styled-components';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
 
 import EditorWrapEdit from './EditorWrapEdit';
 
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
+
+const StyledNoteFormEdit = styled.section`
+  margin: 10px;
+
+  label {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+      color: ${lightBlue};
+      display:block;
+      font-family: ${cyberFont};
+      margin-bottom:10px;
+      width:100%;
+    }
+
+    input {
+      border: none;
+      margin-bottom:10px;
+      padding: 2%;
+      width: 96%;
+    }
+  }
+`;
 
 const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
   const [noteTitle, setNoteTitle] = useState(note.title);

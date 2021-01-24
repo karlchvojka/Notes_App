@@ -6,10 +6,6 @@ import {
 } from 'react-router-dom';
 import { styled, createGlobalStyle } from 'styled-components';
 import { GlobalStyle } from './GlobalStyles.js';
-import '../styles/_reset.scss';
-import '../styles/fonts.scss';
-import '../styles/variables.scss';
-import './App.scss';
 
 // Component Includes
 import Header from './components/Globals/Header';

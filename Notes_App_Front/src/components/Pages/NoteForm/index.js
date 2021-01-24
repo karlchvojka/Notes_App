@@ -1,10 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import './index.scss';
+import styled from 'styled-components';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
 
 import EditorWrap from './EditorWrap';
 
 import APIHelper from '../../../helpers/APIHelper.js';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
+
+const StyledNoteForm = styled.section`
+  margin: 10px;
+
+  label {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+      color: $lightBlue;
+      display:block;
+      font-family: $cyberFont;
+      margin-bottom:10px;
+      width:100%;
+    }
+
+    input {
+      border: none;
+      margin-bottom:10px;
+      padding: 2%;
+      width: 96%;
+    }
+  }
+
+  .draft-editor-wrapper {
+    border: 1px solid $lightBlue;
+    background-color: #fff;
+    padding:10px;
+    margin-bottom:10px;
+
+    h1, h2, h3, h4, h5, h6, p, a, b, i, ul, ol, li, span {
+      font-family: Helvetica, sans-serif;
+    }
+  }
+
+  #submitButton {
+    background-color: $darkGrey;
+    border: 1px solid $lightBlue;
+    color: $lightBlue;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  #submitButton:hover {
+    background-color: $lightBlue;
+    color: $darkGrey;
+  }
+`;
 
 const NoteForm = (props) => {
   const [noteTitle, setNoteTitle] = useState('');
@@ -42,7 +92,7 @@ const NoteForm = (props) => {
   }, [theNote]);
 
   return (
-    <section className="formInner">
+    <StyledNoteForm>
       <form id="taskForm" onSubmit={handleSubmit}>
         <label htmlFor="noteTitleInput">
           <span>Title:</span>
@@ -69,7 +119,7 @@ const NoteForm = (props) => {
           Submit
         </button>
       </form>
-    </section>
+    </StyledNoteForm>
   );
 };
 

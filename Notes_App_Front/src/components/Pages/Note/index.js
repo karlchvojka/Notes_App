@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './index.scss';
+import styled from 'styled-components';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
 import {
   Editor,
   EditorState,
@@ -11,6 +12,38 @@ import {
 } from "react-router-dom";
 import { FaPen, FaTrash } from 'react-icons/fa';
 import CrudHelpers from '../../../helpers/CrudHelpers.js';
+
+const StyledNote = styled.article`
+margin: 20px;
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+
+  .editButton {
+    background-color: ${darkGrey};
+    color: ${lightBlue};
+    font-size:15px;
+    padding: 0px 5px;
+    text-decoration: none;
+
+  }
+
+  button {
+    background-color: ${darkGrey};
+    border: 0px;
+    color: ${lightBlue};
+    font-size:15px;
+  }
+  button:hover {
+    cursor:pointer;
+  }
+}
+
+.DraftEditor-root {
+  color: ${lightBlue};
+}
+`;
 
 const Note = (props) => {
   const { note, notes, setNotes } = props;
@@ -26,7 +59,7 @@ const Note = (props) => {
   }, []);
 
   return (
-    <article className="noteWrap">
+    <StyledNote>
       <section className="noteHeader">
         <h1>{note.title}</h1>
         <div>
@@ -35,7 +68,7 @@ const Note = (props) => {
       </section>
       <p>Category: {note.category}</p>
       <Editor editorState={editorState} />
-    </article>
+    </StyledNote>
   );
 };
 

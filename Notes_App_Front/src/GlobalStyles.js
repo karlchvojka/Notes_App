@@ -117,4 +117,22 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom:10px;
   }
 
+  body {
+    background-color: ${darkGrey};
+  }
+
+  .mainWrap {
+    display:grid;
+    grid-template-columns: 175px auto;
+    height: auto;
+    padding-top:70px;
+
+    .mainInner {
+      padding:20px;
+    }
+
+    .draft-editor-wrapper span {
+      color:#000 !important;
+    }
+  }
 `;

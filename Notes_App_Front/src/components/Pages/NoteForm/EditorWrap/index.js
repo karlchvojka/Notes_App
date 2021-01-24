@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.scss';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../../css_vars.js';
 import {
   Editor,
   EditorState,
