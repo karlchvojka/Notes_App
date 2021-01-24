@@ -1,8 +1,24 @@
 import React from 'react';
-import './index.scss';
+
+import styled from 'styled-components';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
 
 import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa';
 
+const StyledInlineButton = styled.button`
+  background-color: ${darkGrey};
+  border: 0px;
+  color: ${lightBlue};
+  font-size:16px;
+  font-weight:700;
+  height:30px;
+  width:40px;
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+`;
 
 function InlineStyleButtons({ toggleInlineStyle }) {
   const inlineStyleButtons = [
