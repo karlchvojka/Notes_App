@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js'
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js'
 
 import { Link } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';

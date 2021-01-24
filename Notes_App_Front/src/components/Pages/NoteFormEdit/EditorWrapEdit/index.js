@@ -10,8 +10,8 @@ import {
 } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
-import InlineStyleButtons from '../../../Globals/InlineStyleButtons';
-import BlockTypeButtons from '../../../Globals/BlockType';
+import InlineStyleButtons from 'globals/InlineStyleButtons';
+import BlockTypeButtons from 'globals/BlockType';
 
 function keyBindingFunction(event) {
   if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === 'x') {

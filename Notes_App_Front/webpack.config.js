@@ -43,6 +43,10 @@ module.exports = {
   },
 
   resolve: {
+    alias: {
+      globals: path.resolve(__dirname, './src/components/globals'),
+      src: path.resolve(__dirname, './src'),
+    },
     extensions: ["*", ".js", ".jsx", '.scss', '.css'],
   },
   plugins: [

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
 
 import EditorWrap from './EditorWrap';
 
-import APIHelper from '../../../helpers/APIHelper.js';
-import CrudHelpers from '../../../helpers/CrudHelpers.js';
+import APIHelper from 'src/helpers/APIHelper.js';
+import CrudHelpers from 'src/helpers/CrudHelpers.js';
 
 const StyledNoteForm = styled.section`
   margin: 10px;

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaHeading } from 'react-icons/fa';
 import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr';
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
 
 const StyledButton = styled.button`
   background-color: ${darkGrey};

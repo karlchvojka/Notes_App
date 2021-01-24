@@ -8,8 +8,8 @@ import { styled, createGlobalStyle } from 'styled-components';
 import { GlobalStyle } from './GlobalStyles.js';
 
 // Component Includes
-import Header from './components/Globals/Header';
-import SideBar from './components/Globals/SideBar';
+import Header from 'globals/Header';
+import SideBar from 'globals/SideBar';
 import Home from './components/Pages/Home';
 import NoteForm from './components/Pages/NoteForm';
 import NoteFormEdit from './components/Pages/NoteFormEdit';
