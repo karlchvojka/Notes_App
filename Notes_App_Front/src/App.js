@@ -4,6 +4,8 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { styled, createGlobalStyle } from 'styled-components';
+import { GlobalStyle } from './GlobalStyles.js';
 import '../styles/_reset.scss';
 import '../styles/fonts.scss';
 import '../styles/variables.scss';
@@ -42,6 +44,7 @@ function App() {
   };
   return (
     <Router>
+      <GlobalStyle />
       <div id="App">
         <Header />
         <section className="mainWrap">

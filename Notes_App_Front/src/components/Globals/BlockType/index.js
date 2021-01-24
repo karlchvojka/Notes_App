@@ -1,8 +1,23 @@
 import React from 'react';
-import './index.scss';
 import { FaHeading } from 'react-icons/fa';
 import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr';
+import styled from 'styled-components';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '../../../css_vars.js'
 
+const StyledButton = styled.button`
+  background-color: ${darkGrey};
+  border: 0px;
+  color: ${lightBlue};
+  font-size:16px;
+  font-weight:700;
+  height:30px;
+  width:40px;
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+`;
 
 function BlockTypeButtons({ toggleBlockType }) {
   const blockTypeButtons = [
@@ -39,14 +54,14 @@ function BlockTypeButtons({ toggleBlockType }) {
 
   return blockTypeButtons.map((button) =>
     (
-      <button
+      <StyledButton
         className="blockstyleButton"
         data-block={button.block}
         key={button.block}
         onMouseDown={toggleBlockType}
       >
         {button.value}
-      </button>
+      </StyledButton>
     ));
 }
 
