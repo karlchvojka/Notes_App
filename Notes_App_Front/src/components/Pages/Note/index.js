@@ -20,6 +20,10 @@ margin: 20px;
   display: flex;
   justify-content: space-between;
 
+  h1 {
+    margin-bottom:10px;
+  }
+
   .editButton {
     background-color: ${darkGrey};
     color: ${lightBlue};
@@ -40,8 +44,18 @@ margin: 20px;
   }
 }
 
+p {
+  font-size:15px;
+
+  span {
+    text-transform: uppercase;
+    font-weight:700;
+  }
+}
+
 .DraftEditor-root {
   color: ${lightBlue};
+  font-family: ${paraFont};
 }
 `;
 
@@ -66,7 +80,7 @@ const Note = (props) => {
           <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
         </div>
       </section>
-      <p>Category: {note.category}</p>
+      <p><span>Category:</span> {note.category}</p>
       <Editor editorState={editorState} />
     </StyledNote>
   );

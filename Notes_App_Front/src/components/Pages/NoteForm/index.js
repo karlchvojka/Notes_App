@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
+import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '/src/css_vars.js';
 
 import EditorWrap from './EditorWrap';
 
@@ -15,9 +15,9 @@ const StyledNoteForm = styled.section`
     text-transform: uppercase;
 
     span {
-      color: $lightBlue;
+      color: ${lightBlue};
       display:block;
-      font-family: $cyberFont;
+      font-family: ${cyberFont};
       margin-bottom:10px;
       width:100%;
     }
@@ -31,7 +31,7 @@ const StyledNoteForm = styled.section`
   }
 
   .draft-editor-wrapper {
-    border: 1px solid $lightBlue;
+    border: 1px solid ${lightBlue};
     background-color: #fff;
     padding:10px;
     margin-bottom:10px;
@@ -42,17 +42,18 @@ const StyledNoteForm = styled.section`
   }
 
   #submitButton {
-    background-color: $darkGrey;
-    border: 1px solid $lightBlue;
-    color: $lightBlue;
+    background-color: ${darkGrey};
+    border: 1px solid ${lightBlue};
+    color: ${lightBlue};
     font-size: 15px;
     font-weight: 700;
     padding: 5px;
     text-transform: uppercase;
   }
+  
   #submitButton:hover {
-    background-color: $lightBlue;
-    color: $darkGrey;
+    background-color: ${lightBlue};
+    color: ${darkGrey};
   }
 `;
 

@@ -47,7 +47,7 @@ const StyledLi = styled.li`
     .itemHeadRight {
 
       button {
-        background-color:${darkGrey};
+        background-color: ${darkGrey};
         border: 0px;
         color: ${lightBlue};
         font-size:15px;
@@ -56,7 +56,7 @@ const StyledLi = styled.li`
         cursor:pointer;
       }
       .editButton {
-        background-color:${darkGrey};
+        background-color: ${darkGrey};
         color: ${lightBlue};
         font-size:15px;
         padding: 0px 5px;

@@ -74,7 +74,7 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
   }, [theNote]);
 
   return (
-    <section className="formInner">
+    <StyledNoteFormEdit>
       <form id="taskForm" onSubmit={handleSubmit}>
         <label htmlFor="noteTitleInput">
           <span>Title:</span>
@@ -101,7 +101,7 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
           Edit
         </button>
       </form>
-    </section>
+    </StyledNoteFormEdit>
   );
 };
 

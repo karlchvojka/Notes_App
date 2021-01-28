@@ -50,14 +50,14 @@ function InlineStyleButtons({ toggleInlineStyle }) {
   console.log(inlineStyleButtons[1].value)
   return inlineStyleButtons.map((button) =>
     (
-      <button
+      <StyledInlineButton
         className="inlineStyleButton"
         data-style={button.style}
         key={button.style}
         onMouseDown={toggleInlineStyle}
       >
         {button.value}
-      </button>
+      </StyledInlineButton>
     ));
 }
 
