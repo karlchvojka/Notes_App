@@ -11,7 +11,6 @@ import {
   Link,
 } from "react-router-dom";
 import { FaPen, FaTrash } from 'react-icons/fa';
-import CrudHelpers from '../../../helpers/CrudHelpers.js';
 
 const StyledNote = styled.article`
 margin: 20px;
