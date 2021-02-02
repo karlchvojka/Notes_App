@@ -13,11 +13,17 @@ const NoteForm = ({ noteID, currNotes }) => {
     const theNote = currNotes.find(indNote => indNote._id === id)
     return theNote
   };
-  const [note, setNote] = useState(getSelectedNote(id))
+  const [note, setNote] = useState(getSelectedNote(noteID))
   const [noteTitle, setNoteTitle] = useState(note.title || "")
   const [noteContent, setNoteContent] = useState(note.content || "")
   const [noteCat, setNoteCat] = useState(note.category || "")
   const [noteDate, setNoteDate] = useState(note.date || "")
+
+  useEffect(() => {
+    if(noteID) {
+      setNote(getSelectedNote(noteID));
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
