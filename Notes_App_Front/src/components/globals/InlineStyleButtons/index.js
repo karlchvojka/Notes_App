@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa'
 
 import StyledInlineButton from './StyledInlineButton.js'

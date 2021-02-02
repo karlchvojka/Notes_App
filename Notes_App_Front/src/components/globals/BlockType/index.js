@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaHeading } from 'react-icons/fa'
 import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr'
 
