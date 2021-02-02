@@ -6,8 +6,6 @@ import StyledNoteFormEdit from './StyledNoteFormEdit.js'
 import APIHelper from 'src/helpers/APIHelper.js'
 import CrudHelpers from 'src/helpers/CrudHelpers.js'
 
-
-
 const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
   const [noteTitle, setNoteTitle] = useState(note.title)
   const [noteContent, setNoteContent] = useState(note.content)
