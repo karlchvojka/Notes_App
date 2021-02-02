@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import EditorWrapEdit from './EditorWrapEdit'
 import StyledNoteFormEdit from './StyledNoteFormEdit.js'
 
-import APIHelper from 'src/helpers/APIHelper.js'
-import CrudHelpers from 'src/helpers/CrudHelpers.js'
+import APIHelper from 'helpers/APIHelper.js'
+import CrudHelpers from 'helpers/CrudHelpers.js'
 
 const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
   const [noteTitle, setNoteTitle] = useState(note.title)

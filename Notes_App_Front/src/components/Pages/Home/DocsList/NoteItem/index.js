@@ -6,7 +6,7 @@ import {
 import dayjs from 'dayjs'
 import { FaPen, FaTrash } from 'react-icons/fa'
 
-import CrudHelpers from 'src/helpers/CrudHelpers.js'
+import CrudHelpers from 'helpers/CrudHelpers.js'
 
 import StyledNoteItem from './StyledNoteItem.js'
 

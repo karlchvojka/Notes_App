@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom"
 import EditorWrap from './EditorWrap'
 import StyledNoteForm from './StyledNoteForm.js'
 
-import APIHelper from 'src/helpers/APIHelper.js'
-import CrudHelpers from 'src/helpers/CrudHelpers.js'
+import APIHelper from 'helpers/APIHelper.js'
+import CrudHelpers from 'helpers/CrudHelpers.js'
 
 const NoteForm = ({ noteID, currNotes }) => {
   const { id } = useParams()
