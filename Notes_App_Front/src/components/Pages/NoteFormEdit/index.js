@@ -1,56 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import {
-  cyberFont,
-  darkBlue,
-  darkGrey,
-  headerFont,
-  headerGrey,
-  paraFont,
-  midBlue,
-  lightBlue,
-  lightestBlue
-} from 'src/css_vars.js'
+import React, { useState, useEffect } from 'react'
 
-import EditorWrapEdit from './EditorWrapEdit';
+import EditorWrapEdit from './EditorWrapEdit'
+import StyledNoteFormEdit from './StyledNoteFormEdit.js'
 
-import APIHelper from 'src/helpers/APIHelper.js';
-import CrudHelpers from 'src/helpers/CrudHelpers.js';
+import APIHelper from 'src/helpers/APIHelper.js'
+import CrudHelpers from 'src/helpers/CrudHelpers.js'
 
-const StyledNoteFormEdit = styled.section`
-  margin: 10px;
 
-  label {
-    font-weight: 700;
-    text-transform: uppercase;
-
-    span {
-      color: ${lightBlue};
-      display:block;
-      font-family: ${cyberFont};
-      margin-bottom:10px;
-      width:100%;
-    }
-
-    input {
-      border: none;
-      margin-bottom:10px;
-      padding: 2%;
-      width: 96%;
-    }
-  }
-`;
 
 const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
-  const [noteTitle, setNoteTitle] = useState(note.title);
-  const [noteContent, setNoteContent] = useState(note.content);
-  const [noteCat, setNoteCat] = useState(note.category);
-  const [noteDate, setNoteDate] = useState(note.date);
-  const [theNote, setTheNote] = useState(note);
+  const [noteTitle, setNoteTitle] = useState(note.title)
+  const [noteContent, setNoteContent] = useState(note.content)
+  const [noteCat, setNoteCat] = useState(note.category)
+  const [noteDate, setNoteDate] = useState(note.date)
+  const [theNote, setTheNote] = useState(note)
 
   const fetchNoteAndSetNotes = async () => {
-    const currNotes = await APIHelper.getAllNotes();
-    setNotes(currNotes);
+    const currNotes = await APIHelper.getAllNotes()
+    setNotes(currNotes)
   };
 
   const handleSubmit = (e) => {
@@ -60,10 +27,10 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
       content: noteContent,
       date: noteDate,
       title: noteTitle,
-    });
-    const updateNote = CrudHelpers.updateNote(e, noteID, theNote);
-    setNotes([...notes, updateNote]);
-    setTheNote(updateNote);
+    })
+    const updateNote = CrudHelpers.updateNote(e, noteID, theNote)
+    setNotes([...notes, updateNote])
+    setTheNote(updateNote)
   };
 
   useEffect(() => {
@@ -72,16 +39,16 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
       content: noteContent,
       date: new Date(),
       title: noteTitle,
-    });
+    })
   }, [
     noteTitle,
     noteContent,
     noteCat,
-  ]);
+  ])
 
   useEffect(() => {
     fetchNoteAndSetNotes();
-  }, [theNote]);
+  }, [theNote])
 
   return (
     <StyledNoteFormEdit>
@@ -115,4 +82,4 @@ const NoteFormEdit = ({ note, noteID, notes, setNotes }) => {
   );
 };
 
-export default NoteFormEdit;
+export default NoteFormEdit
