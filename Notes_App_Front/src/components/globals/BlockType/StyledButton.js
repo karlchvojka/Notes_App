@@ -1,15 +1,8 @@
 import styled from 'styled-components'
 
 import {
-  cyberFont,
-  darkBlue,
   darkGrey,
-  headerFont,
-  headerGrey,
-  paraFont,
-  midBlue,
   lightBlue,
-  lightestBlue
 } from 'src/css_vars.js'
 
 const StyledButton = styled.button`
