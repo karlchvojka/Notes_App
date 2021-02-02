@@ -47,7 +47,6 @@ function InlineStyleButtons({ toggleInlineStyle }) {
       value: <FaCode />,
     },
   ];
-  console.log(inlineStyleButtons[1].value)
   return inlineStyleButtons.map((button) =>
     (
       <StyledInlineButton

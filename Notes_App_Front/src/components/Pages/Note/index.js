@@ -9,6 +9,7 @@ import {
 import {
   BrowserRouter as Router,
   Link,
+  useParams
 } from "react-router-dom";
 import { FaPen, FaTrash } from 'react-icons/fa';
 
@@ -59,16 +60,20 @@ p {
 `;
 
 const Note = (props) => {
-  const { note, notes, setNotes } = props;
+  const { notes, setNotes } = props;
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
-  const loadContent = () => {
-    const content = convertFromRaw(JSON.parse(note.content));
-    setEditorState(EditorState.createWithContent(content));
+  const { id } = useParams();
+
+  const getSelectedNote = (id) => {
+    const theNote = notes.find(indNote => indNote._id === id);
+    return theNote;
   };
+  const note = getSelectedNote(id);
 
   useEffect(() => {
-    loadContent();
+    const content = convertFromRaw(JSON.parse(note.content));
+    setEditorState(EditorState.createWithContent(content));
   }, []);
 
   return (
@@ -79,7 +84,9 @@ const Note = (props) => {
           <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
         </div>
       </section>
-      <p><span>Category:</span> {note.category}</p>
+      <p>
+        <span>Category:</span> {note.category}
+      </p>
       <Editor editorState={editorState} />
     </StyledNote>
   );

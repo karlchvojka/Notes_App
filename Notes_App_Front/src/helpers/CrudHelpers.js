@@ -9,20 +9,25 @@ const deleteNote = async (e, id) => {
   }
 };
 
-const createNote = async (e, note) => {
+const createNote = async (e, note, noteID) => {
   e.preventDefault();
+  let theNote;
   if (!note) {
     alert('please enter something');
     return;
   }
 
-  const newNote = await APIHelper.createNote(note);
-  return newNote;
+  if(!noteID) {
+    theNote = await APIHelper.createNote(note);
+  } else {
+    theNote = await APIHelper.updateNote(note, noteID);
+  }
+
+  return theNote;
 };
 
-const updateNote = async (e, noteID, note) => {
+const updateNote = async (e, note, noteID) => {
   e.stopPropagation();
-  const updatedNote = await APIHelper.updateNote(note, noteID);
   return updatedNote;
 };
 

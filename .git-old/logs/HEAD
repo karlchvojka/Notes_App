@@ -1,0 +1,56 @@
+0000000000000000000000000000000000000000 ed2909a955035b53a97d0131dbc8214e3ec766cf blackburn <blackburn@burnNet-Ops.(none)> 1607135003 -0500	clone: from git@github.com:karlchvojka/Notes_App.git
+ed2909a955035b53a97d0131dbc8214e3ec766cf 8f173cf83519c32ae47cbdfb28ec1375e2651ffe blackburn <blackburn@burnNet-Ops.(none)> 1607135622 -0500	checkout: moving from master to feature/doclist
+8f173cf83519c32ae47cbdfb28ec1375e2651ffe f7d4145382db3b05d34a63c787886e85c565ec38 karlchvojka <karl.chvojka@protonmail.com> 1607137963 -0500	commit: changes
+f7d4145382db3b05d34a63c787886e85c565ec38 ed2909a955035b53a97d0131dbc8214e3ec766cf karlchvojka <karl.chvojka@protonmail.com> 1607138009 -0500	checkout: moving from feature/doclist to master
+ed2909a955035b53a97d0131dbc8214e3ec766cf 29759721b1727f41355e27e5e5f902435b7f4910 karlchvojka <karl.chvojka@protonmail.com> 1607138013 -0500	pull origin master: Fast-forward
+29759721b1727f41355e27e5e5f902435b7f4910 fdcca912ddceff2778043d897c91c4c619279ec9 karlchvojka <karl.chvojka@protonmail.com> 1607138207 -0500	commit: Added readme to backend
+fdcca912ddceff2778043d897c91c4c619279ec9 3f27a082f52241d5e926fc1851ecf49adb5d3715 karlchvojka <karl.chvojka@protonmail.com> 1607138795 -0500	checkout: moving from master to feature/header
+3f27a082f52241d5e926fc1851ecf49adb5d3715 fdcca912ddceff2778043d897c91c4c619279ec9 karlchvojka <karl.chvojka@protonmail.com> 1607138799 -0500	pull origin master: Fast-forward
+fdcca912ddceff2778043d897c91c4c619279ec9 017bd2e82c6bbb22f534096c58e13ff694c2845a karlchvojka <karl.chvojka@protonmail.com> 1607141910 -0500	commit: Header CSS Fixes
+017bd2e82c6bbb22f534096c58e13ff694c2845a fdcca912ddceff2778043d897c91c4c619279ec9 karlchvojka <karl.chvojka@protonmail.com> 1607141946 -0500	checkout: moving from feature/header to master
+fdcca912ddceff2778043d897c91c4c619279ec9 62d5af91f44052fea3a752395b0966c8a4be60a3 karlchvojka <karl.chvojka@protonmail.com> 1607141950 -0500	pull origin master: Fast-forward
+62d5af91f44052fea3a752395b0966c8a4be60a3 07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 karlchvojka <karl.chvojka@protonmail.com> 1607365641 -0500	commit: installed font-awesome
+07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 017bd2e82c6bbb22f534096c58e13ff694c2845a karlchvojka <karl.chvojka@protonmail.com> 1607365831 -0500	checkout: moving from master to feature/header
+017bd2e82c6bbb22f534096c58e13ff694c2845a 07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 karlchvojka <karl.chvojka@protonmail.com> 1607365839 -0500	pull origin master: Fast-forward
+07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 e9d5cb4cf75152ea46dea3c74e4b0564f46bb296 karlchvojka <karl.chvojka@protonmail.com> 1607366837 -0500	commit: Added icon for the add new note button
+e9d5cb4cf75152ea46dea3c74e4b0564f46bb296 07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 karlchvojka <karl.chvojka@protonmail.com> 1607366897 -0500	checkout: moving from feature/header to master
+07dac10d6f2aa9b5d3d73f08aa21523d09fe5ce6 43d330408ceeb14f1831b1c24c165380a330ae03 karlchvojka <karl.chvojka@protonmail.com> 1607366901 -0500	pull origin master: Fast-forward
+43d330408ceeb14f1831b1c24c165380a330ae03 f7d4145382db3b05d34a63c787886e85c565ec38 karlchvojka <karl.chvojka@protonmail.com> 1607366913 -0500	checkout: moving from master to feature/doclist
+f7d4145382db3b05d34a63c787886e85c565ec38 43d330408ceeb14f1831b1c24c165380a330ae03 karlchvojka <karl.chvojka@protonmail.com> 1607366928 -0500	pull origin master: Fast-forward
+43d330408ceeb14f1831b1c24c165380a330ae03 b752c035efc00480d069a706a222f8cbfa2ec7ba karlchvojka <karl.chvojka@protonmail.com> 1607374159 -0500	commit: Added proper spacing to header
+b752c035efc00480d069a706a222f8cbfa2ec7ba bf6cea99a80d8fe77dd25ebaf8927b71fa1572a2 karlchvojka <karl.chvojka@protonmail.com> 1607374239 -0500	commit: Added pen icon to edit button
+bf6cea99a80d8fe77dd25ebaf8927b71fa1572a2 89a09ce51866e954e290dc807dbf0c01ef2db5d5 karlchvojka <karl.chvojka@protonmail.com> 1607374643 -0500	commit: Added icons to note items
+89a09ce51866e954e290dc807dbf0c01ef2db5d5 43d330408ceeb14f1831b1c24c165380a330ae03 karlchvojka <karl.chvojka@protonmail.com> 1607374680 -0500	checkout: moving from feature/doclist to master
+43d330408ceeb14f1831b1c24c165380a330ae03 81d550e9f1b5b154278d5f1eb69647ddce79d9d0 karlchvojka <karl.chvojka@protonmail.com> 1607374685 -0500	pull origin master: Fast-forward
+81d550e9f1b5b154278d5f1eb69647ddce79d9d0 846602ff21891449989bb5e11bb59b75e7abd259 karlchvojka <karl.chvojka@protonmail.com> 1607374774 -0500	checkout: moving from master to feature/form
+846602ff21891449989bb5e11bb59b75e7abd259 81d550e9f1b5b154278d5f1eb69647ddce79d9d0 karlchvojka <karl.chvojka@protonmail.com> 1607374778 -0500	pull origin master: Fast-forward
+81d550e9f1b5b154278d5f1eb69647ddce79d9d0 f1b8d99600507b98039a5907c8a9f4dce79de7f5 karlchvojka <karl.chvojka@protonmail.com> 1607390047 -0500	commit: Cleaned up initial styles for form
+f1b8d99600507b98039a5907c8a9f4dce79de7f5 81d550e9f1b5b154278d5f1eb69647ddce79d9d0 karlchvojka <karl.chvojka@protonmail.com> 1607390098 -0500	checkout: moving from feature/form to master
+81d550e9f1b5b154278d5f1eb69647ddce79d9d0 fb67febb3c9263bd4a0a519c7e684c79d26acc6f karlchvojka <karl.chvojka@protonmail.com> 1607390103 -0500	pull origin master: Fast-forward
+fb67febb3c9263bd4a0a519c7e684c79d26acc6f 6251ffd984c16c7a5bb5e55750a97141177e21ce karlchvojka <karl.chvojka@protonmail.com> 1607390229 -0500	checkout: moving from master to feature/sidebar
+6251ffd984c16c7a5bb5e55750a97141177e21ce fb67febb3c9263bd4a0a519c7e684c79d26acc6f karlchvojka <karl.chvojka@protonmail.com> 1607390235 -0500	pull origin master: Fast-forward
+fb67febb3c9263bd4a0a519c7e684c79d26acc6f 2787f718fe1dc1780a06a519cee1648e55ee6e77 karlchvojka <karl.chvojka@protonmail.com> 1607393968 -0500	commit: Cleaned up more styles
+2787f718fe1dc1780a06a519cee1648e55ee6e77 fb67febb3c9263bd4a0a519c7e684c79d26acc6f karlchvojka <karl.chvojka@protonmail.com> 1607393996 -0500	checkout: moving from feature/sidebar to master
+fb67febb3c9263bd4a0a519c7e684c79d26acc6f fe6cd1042f6083f163c789cb5deff1157f572e87 karlchvojka <karl.chvojka@protonmail.com> 1607394000 -0500	pull origin master: Fast-forward
+fe6cd1042f6083f163c789cb5deff1157f572e87 fe6cd1042f6083f163c789cb5deff1157f572e87 karlchvojka <karl.chvojka@protonmail.com> 1607394593 -0500	checkout: moving from master to feature/note
+fe6cd1042f6083f163c789cb5deff1157f572e87 c238c3756a4eb6aeec53e34154f877029d4340fb karlchvojka <karl.chvojka@protonmail.com> 1607395588 -0500	commit: EOD cleanup
+c238c3756a4eb6aeec53e34154f877029d4340fb 1eeec35be7fe2b053cf49fdf25447e4cedc776a7 karlchvojka <karl.chvojka@protonmail.com> 1607992207 -0500	commit: Cleaned up some editor styles
+1eeec35be7fe2b053cf49fdf25447e4cedc776a7 fe6cd1042f6083f163c789cb5deff1157f572e87 karlchvojka <karl.chvojka@protonmail.com> 1607992254 -0500	checkout: moving from feature/note to master
+fe6cd1042f6083f163c789cb5deff1157f572e87 4f51bfad98a8216052ac10ff90da61b3e9bbbd2b karlchvojka <karl.chvojka@protonmail.com> 1607992258 -0500	pull origin master: Fast-forward
+4f51bfad98a8216052ac10ff90da61b3e9bbbd2b 4f51bfad98a8216052ac10ff90da61b3e9bbbd2b karlchvojka <karl.chvojka@protonmail.com> 1611442522 -0500	checkout: moving from master to feature/restructure
+4f51bfad98a8216052ac10ff90da61b3e9bbbd2b 957e01702611956e4c094272f76036d7a6038a23 karlchvojka <karl.chvojka@protonmail.com> 1611443596 -0500	commit: Restructured components
+957e01702611956e4c094272f76036d7a6038a23 326cfd2dc18913d53feed214b525fc75701bcc52 karlchvojka <karl.chvojka@protonmail.com> 1611443876 -0500	commit: Backend updates
+326cfd2dc18913d53feed214b525fc75701bcc52 49620799b4d5d40d993459193dab2cddb95fb6be karlchvojka <karl.chvojka@protonmail.com> 1611444060 -0500	commit: Frontend Updates
+49620799b4d5d40d993459193dab2cddb95fb6be 4f51bfad98a8216052ac10ff90da61b3e9bbbd2b karlchvojka <karl.chvojka@protonmail.com> 1611444531 -0500	checkout: moving from feature/restructure to master
+4f51bfad98a8216052ac10ff90da61b3e9bbbd2b 41daf666c93c8e507655b1e623d1b345b4ccf807 karlchvojka <karl.chvojka@protonmail.com> 1611444536 -0500	pull origin master: Fast-forward
+41daf666c93c8e507655b1e623d1b345b4ccf807 eb2289ed641cfa116700fbde8498af1db6c931f3 karlchvojka <karl.chvojka@protonmail.com> 1611445811 -0500	commit: Updated dependencies
+eb2289ed641cfa116700fbde8498af1db6c931f3 55ab368864105f79055f23c50972100fb3fbabf1 karlchvojka <karl.chvojka@protonmail.com> 1611446444 -0500	commit: More updates
+55ab368864105f79055f23c50972100fb3fbabf1 c9c48d84ae732b8e91140eb9e53e1a27a1fd58ea karlchvojka <karl.chvojka@protonmail.com> 1611450079 -0500	commit: Started converting to Styled-components
+c9c48d84ae732b8e91140eb9e53e1a27a1fd58ea 025ea2a403dc17a457eb2ae149fdc0143d062f10 karlchvojka <karl.chvojka@protonmail.com> 1611450215 -0500	commit: Converted InlineStyleButton to styled component
+025ea2a403dc17a457eb2ae149fdc0143d062f10 63fee07139f6c86587e0a70d6933d7b9d21c2cf1 karlchvojka <karl.chvojka@protonmail.com> 1611450350 -0500	commit: Converted Sidebar component to styled component
+63fee07139f6c86587e0a70d6933d7b9d21c2cf1 d30e54f2ebe15743cf3a4aba94b91d5f4261b011 karlchvojka <karl.chvojka@protonmail.com> 1611451294 -0500	commit: Converted Home, docslist, noteitem to styled component
+d30e54f2ebe15743cf3a4aba94b91d5f4261b011 6e6d4a81be5763c7ebbe2ae01f0213ade2947418 karlchvojka <karl.chvojka@protonmail.com> 1611452033 -0500	commit: Finshed converting components to styled-components
+6e6d4a81be5763c7ebbe2ae01f0213ade2947418 7ec545e88e5c13360f6be5182433a18b072f9ba8 karlchvojka <karl.chvojka@protonmail.com> 1611453168 -0500	commit: More styled updates
+7ec545e88e5c13360f6be5182433a18b072f9ba8 05272d6fa0bb1020fd7022da6edc87dae4303f42 karlchvojka <karl.chvojka@protonmail.com> 1611454337 -0500	commit: Added aliases
+05272d6fa0bb1020fd7022da6edc87dae4303f42 feab249c069aa5e1a7e075a5998483d3aee8ed67 karlchvojka <karl.chvojka@protonmail.com> 1611857272 -0500	commit: Cleaned up a couple css issues
+                                                                                                                                                                                       

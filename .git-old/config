@@ -1,0 +1,23 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:karlchvojka/Notes_App.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "feature/doclist"]
+	remote = origin
+	merge = refs/heads/feature/doclist
+[branch "feature/header"]
+	remote = origin
+	merge = refs/heads/feature/header
+[branch "feature/form"]
+	remote = origin
+	merge = refs/heads/feature/form
+[branch "feature/sidebar"]
+	remote = origin
+	merge = refs/heads/feature/sidebar

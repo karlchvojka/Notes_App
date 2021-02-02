@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from '/src/css_vars.js';
+import { useParams } from "react-router-dom";
+
 
 import EditorWrap from './EditorWrap';
 
@@ -50,47 +52,36 @@ const StyledNoteForm = styled.section`
     padding: 5px;
     text-transform: uppercase;
   }
-  
+
   #submitButton:hover {
     background-color: ${lightBlue};
     color: ${darkGrey};
   }
 `;
 
-const NoteForm = (props) => {
-  const [noteTitle, setNoteTitle] = useState('');
-  const [noteContent, setNoteContent] = useState('');
-  const [noteCat, setNoteCat] = useState('');
-  const [note, setNote] = useState({});
-  const [theNote, setTheNote] = useState({});
-
-  const fetchNoteAndSetNotes = async () => {
-    const notes = await APIHelper.getAllNotes();
-    props.setNotes(notes);
+const NoteForm = ({ noteID, currNotes }) => {
+  const { id } = useParams();
+  const getSelectedNote = (id) => {
+    const theNote = currNotes.find(indNote => indNote._id === id);
+    return theNote;
   };
+  const [note, setNote] = useState(getSelectedNote(id));
+  const [noteTitle, setNoteTitle] = useState(note.title || "");
+  const [noteContent, setNoteContent] = useState(note.content || "");
+  const [noteCat, setNoteCat] = useState(note.category || "");
+  const [noteDate, setNoteDate] = useState(note.date || "");
 
-  const handleSubmit = (e) => {
-    const createNote = CrudHelpers.createNote(e, note);
-    props.setNotes([...props.currNotes, createNote]);
-    setTheNote(createNote);
-  };
-
-  useEffect(() => {
-    setNote({
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const theDate = new Date();
+    CrudHelpers.createNote(e, {
       category: noteCat,
       content: noteContent,
-      date: new Date(),
+      date: theDate,
       title: noteTitle,
-    });
-  }, [
-    noteTitle,
-    noteContent,
-    noteCat,
-  ]);
-
-  useEffect(() => {
-    fetchNoteAndSetNotes();
-  }, [theNote]);
+    }, noteID);
+    setNoteDate(theDate);
+  };
 
   return (
     <StyledNoteForm>
