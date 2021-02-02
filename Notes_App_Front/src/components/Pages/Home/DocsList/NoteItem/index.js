@@ -67,8 +67,7 @@ const StyledLi = styled.li`
   }
 `;
 
-const NoteItem = (props) => {
-  const { note, notes, setNotes } = props;
+const NoteItem = ({ note, notes, setNotes }) => {
 
   const handleDeleteClick = (e) => {
     CrudHelpers.deleteNote(e, note._id);

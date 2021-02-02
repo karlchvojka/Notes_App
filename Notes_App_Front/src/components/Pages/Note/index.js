@@ -59,8 +59,7 @@ p {
 }
 `;
 
-const Note = (props) => {
-  const { notes, setNotes } = props;
+const Note = ({ notes, setNotes }) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const { id } = useParams();
