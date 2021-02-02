@@ -5,7 +5,17 @@ import {
 } from "react-router-dom";
 import dayjs from 'dayjs';
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
+import {
+  cyberFont,
+  darkBlue,
+  darkGrey,
+  headerFont,
+  headerGrey,
+  paraFont,
+  midBlue,
+  lightBlue,
+  lightestBlue
+} from 'src/css_vars.js'
 import CrudHelpers from 'src/helpers/CrudHelpers.js';
 
 import { FaPen, FaTrash } from 'react-icons/fa';

@@ -1,6 +1,16 @@
 import { styled, createGlobalStyle } from 'styled-components';
 
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from './css_vars.js'
+import {
+  cyberFont,
+  darkBlue,
+  darkGrey,
+  headerFont,
+  headerGrey,
+  paraFont,
+  midBlue,
+  lightBlue,
+  lightestBlue
+} from './css_vars.js'
 
 export const GlobalStyle = createGlobalStyle`
 

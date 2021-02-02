@@ -15,7 +15,7 @@ import NoteForm from './components/Pages/NoteForm';
 import NoteFormEdit from './components/Pages/NoteFormEdit';
 import Note from './components/Pages/Note';
 
-import APIHelper from './helpers/APIHelper';
+import APIHelper from 'helpers/APIHelper';
 
 function App() {
   const [notes, setNotes] = useState([]);

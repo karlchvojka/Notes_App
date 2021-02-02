@@ -1,7 +1,17 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
+import {
+  cyberFont,
+  darkBlue,
+  darkGrey,
+  headerFont,
+  headerGrey,
+  paraFont,
+  midBlue,
+  lightBlue,
+  lightestBlue
+} from 'src/css_vars.js'
 
 import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa';
 
