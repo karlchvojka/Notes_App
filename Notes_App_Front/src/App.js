@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  useParams
 } from 'react-router-dom';
 import { styled, createGlobalStyle } from 'styled-components';
 import { GlobalStyle } from './GlobalStyles.js';
@@ -12,7 +13,6 @@ import Header from 'globals/Header';
 import SideBar from 'globals/SideBar';
 import Home from './components/Pages/Home';
 import NoteForm from './components/Pages/NoteForm';
-import NoteFormEdit from './components/Pages/NoteFormEdit';
 import Note from './components/Pages/Note';
 
 import APIHelper from 'helpers/APIHelper';
@@ -27,6 +27,7 @@ function App() {
   useEffect(() => {
     fetchNoteAndSetNotes();
   }, []);
+
 
   return (
     <Router>
@@ -48,20 +49,20 @@ function App() {
                 setNotes={setNotes}
               />
             </Route>
-            <Route exact path="/notes/cat/:cat">
+            <Route exact path="/notes/cat/:catID">
               <Home
                 notes={notes}
                 setNotes={setNotes}
               />
             </Route>
-            <Route exact path="/notes/:id">
+            <Route exact path="/notes/:noteID">
               <Note
                 notes={notes}
                 setNotes={setNotes}
                 readOnly
               />
             </Route>
-            <Route exact path="/notes/:id/edit">
+            <Route exact path="/notes/:noteID/edit">
               <NoteForm
                 currNotes={notes}
                 setNotes={setNotes}

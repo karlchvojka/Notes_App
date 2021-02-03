@@ -22,7 +22,7 @@ function keyBindingFunction(event) {
   return getDefaultKeyBinding(event);
 }
 
-function EditorWrap({ setNoteContent }) {
+function EditorWrap({ editorWrapState, noteContent, setNoteContent }) {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const [editorProps, setEditorProps] = useState({
@@ -61,8 +61,15 @@ function EditorWrap({ setNoteContent }) {
   };
 
   useEffect(() => {
-    saveContent(editorState);
-  }, [editorState]);
+    if (noteContent) {
+      setEditorState(EditorState.createWithContent(convertFromRaw(JSON.parse(noteContent))));
+    }
+  }, [noteContent]);
+
+  useEffect(() => {
+    editorWrapState.current=JSON.stringify(convertToRaw(editorState.getCurrentContent()));
+  }, [editorState])
+
 
   return (
     <div className="my-little-app">
@@ -77,7 +84,7 @@ function EditorWrap({ setNoteContent }) {
           editorState={editorState}
           handleKeyCommand={handleKeyCommand}
           keyBindingFn={keyBindingFunction}
-          onChange={(editorState) => setEditorState(editorState)}
+          onChange={setEditorState}
           spellCheck={editorProps.spellCheck}
           />
       </div>

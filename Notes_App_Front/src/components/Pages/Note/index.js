@@ -17,13 +17,13 @@ import StyledNote from './StyledNote.js'
 const Note = ({ notes, setNotes }) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty())
 
-  const { id } = useParams()
+  const { noteID } = useParams()
 
-  const getSelectedNote = (id) => {
-    const theNote = notes.find(indNote => indNote._id === id)
+  const getSelectedNote = (noteID) => {
+    const theNote = notes.find(indNote => indNote._id === noteID)
     return theNote
   };
-  const note = getSelectedNote(id)
+  const note = getSelectedNote(noteID)
 
   useEffect(() => {
     const content = convertFromRaw(JSON.parse(note.content));

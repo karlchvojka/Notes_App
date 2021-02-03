@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from "react-router-dom"
 
 import EditorWrap from './EditorWrap'
@@ -7,30 +7,37 @@ import StyledNoteForm from './StyledNoteForm.js'
 import APIHelper from 'helpers/APIHelper.js'
 import CrudHelpers from 'helpers/CrudHelpers.js'
 
-const NoteForm = ({ noteID, currNotes }) => {
-  const { id } = useParams()
-  const getSelectedNote = (id) => {
-    const theNote = currNotes.find(indNote => indNote._id === id)
-    return theNote
-  };
-  const [note, setNote] = useState(getSelectedNote(noteID) || "")
-  const [noteTitle, setNoteTitle] = useState(note.title || "")
-  const [noteContent, setNoteContent] = useState(note.content || "")
-  const [noteCat, setNoteCat] = useState(note.category || "")
-  const [noteDate, setNoteDate] = useState(note.date || "")
+const NoteForm = ({ currNotes }) => {
+  const { noteID } = useParams()
+  const [noteCat, setNoteCat] = useState("")
+  const [noteContent, setNoteContent] = useState("")
+  const [noteDate, setNoteDate] = useState("")
+  const [noteTitle, setNoteTitle] = useState("")
+
+  const editorWrapState = useRef(null);
 
   useEffect(() => {
-    if(noteID) {
-      setNote(getSelectedNote(noteID));
+    if(noteID && currNotes.length) {
+      const {
+        category,
+        content,
+        date,
+        title,
+      } = currNotes.find(indNote => indNote._id === noteID);
+
+      setNoteCat(category)
+      setNoteContent(content)
+      setNoteDate(date)
+      setNoteTitle(title)
     }
-  }, []);
+  }, [currNotes]);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const theDate = new Date();
     CrudHelpers.createNote(e, {
       category: noteCat,
-      content: noteContent,
+      content: editorWrapState.current,
       date: theDate,
       title: noteTitle,
     }, noteID)
@@ -60,7 +67,11 @@ const NoteForm = ({ noteID, currNotes }) => {
             value={noteCat}
             />
         </label>
-        <EditorWrap setNoteContent={setNoteContent} />
+        <EditorWrap
+          editorWrapState={editorWrapState}
+          noteContent={noteContent}
+          setNoteContent={setNoteContent}
+        />
         <button id="submitButton" type="submit">
           Submit
         </button>
