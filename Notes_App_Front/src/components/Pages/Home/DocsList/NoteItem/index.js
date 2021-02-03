@@ -32,7 +32,7 @@ const NoteItem = ({ note, notes, setNotes }) => {
           </p>
         </div>
         <div className="itemHeadRight">
-          <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
+          <Link className="editButton" to={`/${note._id}/edit`}><FaPen /></Link>
           <button className="deleteButton" onClick={e => handleDeleteClick(e)} type="button"><FaTrash /></button>
         </div>
       </div>

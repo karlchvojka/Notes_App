@@ -35,7 +35,7 @@ const Note = ({ notes, setNotes }) => {
       <section className="noteHeader">
         <h1>{note.title}</h1>
         <div>
-          <Link className="editButton" to={`/notes/${note._id}/edit`}><FaPen /></Link>
+          <Link className="editButton" to={`/${note._id}/edit`}><FaPen /></Link>
         </div>
       </section>
       <p>

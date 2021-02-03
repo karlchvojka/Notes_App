@@ -49,7 +49,7 @@ function App() {
                 setNotes={setNotes}
               />
             </Route>
-            <Route exact path="/notes/cat/:catID">
+            <Route exact path="/category/:catID">
               <Home
                 notes={notes}
                 setNotes={setNotes}
@@ -62,7 +62,7 @@ function App() {
                 readOnly
               />
             </Route>
-            <Route exact path="/notes/:noteID/edit">
+            <Route exact path="/:noteID/edit">
               <NoteForm
                 currNotes={notes}
                 setNotes={setNotes}
