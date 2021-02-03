@@ -13,4 +13,14 @@ const lightestBlue = '#44d5f2';
 // Other
 const spacing = '20px';
 
-export { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue };
+export {
+  cyberFont,
+  darkBlue,
+  darkGrey,
+  headerFont,
+  headerGrey,
+  paraFont,
+  midBlue,
+  lightBlue,
+  lightestBlue
+};

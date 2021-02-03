@@ -1,23 +1,8 @@
 import React from 'react';
-import { FaHeading } from 'react-icons/fa';
-import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr';
-import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
+import { FaHeading } from 'react-icons/fa'
+import { GrBlockQuote, GrUnorderedList, GrOrderedList } from 'react-icons/gr'
 
-const StyledButton = styled.button`
-  background-color: ${darkGrey};
-  border: 0px;
-  color: ${lightBlue};
-  font-size:16px;
-  font-weight:700;
-  height:30px;
-  width:40px;
-
-  svg {
-    height: auto;
-    width: auto;
-  }
-`;
+import StyledButton from './StyledButton.js'
 
 function BlockTypeButtons({ toggleBlockType }) {
   const blockTypeButtons = [
@@ -50,7 +35,7 @@ function BlockTypeButtons({ toggleBlockType }) {
       value: <GrOrderedList />,
       block: 'ordered-list-item',
     }
-  ];
+  ]
 
   return blockTypeButtons.map((button) =>
     (
@@ -62,7 +47,8 @@ function BlockTypeButtons({ toggleBlockType }) {
       >
         {button.value}
       </StyledButton>
-    ));
+    )
+  )
 }
 
 export default BlockTypeButtons;

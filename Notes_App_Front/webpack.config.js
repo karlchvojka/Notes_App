@@ -46,6 +46,7 @@ module.exports = {
     alias: {
       globals: path.resolve(__dirname, './src/components/globals'),
       src: path.resolve(__dirname, './src'),
+      helpers: path.resolve(__dirname, './src/helpers'),
     },
     extensions: ["*", ".js", ".jsx", '.scss', '.css'],
   },

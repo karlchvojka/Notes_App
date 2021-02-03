@@ -4,15 +4,22 @@ import DocsList from './DocsList';
 
 function Home({ notes, setNotes }) {
   const [sorted, setSorted] = useState();
-  const { cat } = useParams();
-  const getNotesByCat = (cat) => {
-    const catNotes = notes.filter(note => note.category === cat);
-    return catNotes;
+  const { catID } = useParams();
+  const getNotesByCat = (catID, notes) => {
+    return notes.filter(note => note.category === catID);
   };
+
+  useEffect(() => {
+    if(catID) {
+      setSorted(getNotesByCat(catID, notes));
+    } else {
+      setSorted(notes);
+    }
+  }, [notes]);
 
   return (
     <section className="mainInner">
-      <DocsList notes={notes} setNotes={setNotes} />
+      <DocsList notes={sorted || notes} setNotes={setNotes} />
     </section>
   );
 }

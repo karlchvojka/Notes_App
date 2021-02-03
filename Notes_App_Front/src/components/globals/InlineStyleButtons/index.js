@@ -1,24 +1,7 @@
 import React from 'react';
+import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa'
 
-import styled from 'styled-components';
-import { headerFont, paraFont, cyberFont, darkGrey, headerGrey, darkBlue, midBlue, lightBlue, lightestBlue } from 'src/css_vars.js';
-
-import { FaItalic, FaBold, FaUnderline, FaStrikethrough, FaCode } from 'react-icons/fa';
-
-const StyledInlineButton = styled.button`
-  background-color: ${darkGrey};
-  border: 0px;
-  color: ${lightBlue};
-  font-size:16px;
-  font-weight:700;
-  height:30px;
-  width:40px;
-
-  svg {
-    height: auto;
-    width: auto;
-  }
-`;
+import StyledInlineButton from './StyledInlineButton.js'
 
 function InlineStyleButtons({ toggleInlineStyle }) {
   const inlineStyleButtons = [
@@ -46,7 +29,8 @@ function InlineStyleButtons({ toggleInlineStyle }) {
       style: 'CODE',
       value: <FaCode />,
     },
-  ];
+  ]
+
   return inlineStyleButtons.map((button) =>
     (
       <StyledInlineButton
@@ -57,7 +41,8 @@ function InlineStyleButtons({ toggleInlineStyle }) {
       >
         {button.value}
       </StyledInlineButton>
-    ));
+    )
+  )
 }
 
-export default InlineStyleButtons;
+export default InlineStyleButtons
