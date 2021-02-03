@@ -7,7 +7,7 @@ import StyledNoteForm from './StyledNoteForm.js'
 import APIHelper from 'helpers/APIHelper.js'
 import CrudHelpers from 'helpers/CrudHelpers.js'
 
-const NoteForm = ({ currNotes }) => {
+const NoteForm = ({ currNotes, setNotes, }) => {
   const { noteID } = useParams()
   const [noteCat, setNoteCat] = useState("")
   const [noteContent, setNoteContent] = useState("")
@@ -42,6 +42,7 @@ const NoteForm = ({ currNotes }) => {
       title: noteTitle,
     }, noteID)
     setNoteDate(theDate)
+    setNotes(await APIHelper.getAllNotes());
   }
 
   return (
